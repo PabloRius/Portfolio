@@ -1,18 +1,26 @@
 import React from "react";
+import { Link, RouteObject } from "react-router-dom";
 
 interface DrawerProps{
-    active: boolean
+    active: boolean,
+    toggle: ()=>void,
+    routes: RouteObject[]
 }
 
-export function Drawer({active}:DrawerProps){
+export function Drawer({active, toggle, routes}:DrawerProps){
     return (
         <div className={`MainDrawer ${active ? "on": "off"}`}>
             <div className="Content">
-                <div className="DrawerItem">Home</div>
-                <div className="DrawerItem">About Me</div>
-                <div className="DrawerItem">CV</div>
-                <div className="DrawerItem">Projects</div>
-                <div className="DrawerItem">Contact</div>
+                {routes.map((route, index)=>{
+                    return (
+                    <Link 
+                        className="DrawerItem" 
+                        to={route.path!} 
+                        onClick={()=>{toggle()}} 
+                        key={index}>
+                            { route.id }
+                        </Link>)
+                })}
             </div>
         </div>
     )

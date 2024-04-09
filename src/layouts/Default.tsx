@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { RouterProvider } from "react-router-dom";
+import { Route, RouterProvider, Routes } from "react-router-dom";
 
-import { defaultRouter } from "../routes/routes";
+import { defaultRouter, routes } from "../routes/routes";
 
-import { MainDrawer, MainFeed, MainSidebar } from "../components"
+import { MainDrawer, MainSidebar } from "../components"
 
 export function Default(){
     const [drawer, setDrawer] = useState(false)
@@ -13,10 +13,16 @@ export function Default(){
     return (
         <div className="DefaultLayout">
             <div className="MainBody">
-                <RouterProvider router={defaultRouter} />
+                <Routes>
+                    {routes.map((route)=>{
+                        return (
+                            <Route element={route.element} path={route.path} key={route.id} />
+                        )
+                    })}
+                </Routes>
             </div>
             <MainSidebar toggleDrawer={toggleDrawer} />
-            <MainDrawer active={drawer} />
+            <MainDrawer active={drawer} toggle={toggleDrawer} routes={routes} />
         </div>
     )
 }

@@ -1,0 +1,282 @@
+@import "../mixins.scss";
+@import "../variables.scss";
+@import "../animations/animations.scss";
+
+.MainFeed{
+    >.Presentation{
+        /* Responsive */
+        @include media("xs"){
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        @include media("sm"){
+            height: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        @include media("md"){
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+        }
+        @include media("lg"){
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+        }
+        @include media("xl"){
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+        }
+        >.Text{
+            display: flex;
+            flex-direction: column;
+            /* Responsive */
+            @include media("xs"){
+                width: calc(100% - 30px);
+                height: calc(100vh - $sidebar-xs - 11px);
+                padding: 10px 15px 0 15px
+            }
+            @include media("sm"){
+                width: calc(100% - 30px);
+                height: calc(100vh - $sidebar-sm - 11px);
+                padding: 10px 15px 0 15px
+            }
+            @include media("md"){
+                width: calc(50% - 60px);
+                padding: 10px 30px 0 30px;
+                row-gap: 150px;
+                justify-content: space-around;
+            }
+            @include media("lg"){
+                width: calc(50% - 60px);
+                padding: 10px 30px 0 30px;
+                row-gap: 150px;
+                justify-content: space-around;
+            }
+            @include media("xl"){
+                width: calc(50% - 60px);
+                padding: 10px 30px 0 30px;
+                row-gap: 150px;
+                justify-content: space-around;
+            }
+            
+            >.Email{
+                display: flex;
+                flex-direction: row;
+                margin: 10px 0;
+                column-gap: 5px;
+                /* Responsive */
+                @include media("xs"){
+                    justify-content: flex-end;
+                    height: 5%;
+                }
+                @include media("sm"){
+                    justify-content: flex-end;
+                    height: 5%;
+                }
+                @include media("md"){
+                    justify-content: flex-start;
+                    height: 5%;
+                }
+                @include media("lg"){
+                    justify-content: flex-start;
+                    height: 5%;
+                }
+                @include media("xl"){
+                    justify-content: flex-start;
+                    height: 5%;
+                }
+
+                >.Redirect{
+                    cursor: pointer;
+                    @include underline-effect($grey-dark);
+                }
+            }
+            >.Body{
+                display: flex;
+                flex-direction: column;
+                row-gap: 15px;
+                /* Responsive */
+                @include media("xs"){
+                    height: 50%;
+                }
+                @include media("sm"){
+                    height: 50%;
+                }
+                @include media("md"){
+                    height: 35%;
+                }
+                @include media("lg"){
+                    height: 35%;
+                }
+                @include media("xl"){
+                    height: 35%;
+                }
+                h2{
+                    /* Responsive */
+                    @include media("xs"){
+                        font-size: 40px;
+                    }
+                    @include media("sm"){
+                        font-size: 40px;
+                    }
+                    @include media("md"){
+                        font-size: 45px;
+                    }
+                    @include media("lg"){
+                        font-size: 45px;
+                    }
+                    @include media("xl"){
+                        font-size: 45px;
+                    }
+                }
+                p{
+                    /* Responsive */
+                    @include media("xs"){
+                        font-size: 16px;
+                        width: 100%;
+                    }
+                    @include media("sm"){
+                        font-size: 16px;
+                        width: 100%;
+                    }
+                    @include media("md"){
+                        font-size: 18px;
+                        text-align: justify;
+                        width: 85%;
+                    }
+                    @include media("lg"){
+                        font-size: 18px;
+                        text-align: justify;
+                        width: 85%;
+                    }
+                    @include media("xl"){
+                        font-size: 18px;
+                        text-align: justify;
+                        width: 85%;
+                    }
+                }
+            }
+            >.Files{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /* Responsive */
+                @include media("xs"){
+                    height: 45%;
+                }
+                @include media("sm"){
+                    height: 45%;
+                }
+                @include media("md"){
+                    height: 60%;
+                }
+                @include media("lg"){
+                    height: 60%;
+                }
+                @include media("xl"){
+                    height: 60%;
+                }
+                >button{
+                    /* Responsive */
+                    @include media("xs"){
+                        width: 300px;
+                        height: 50px;
+                        font-size: 18px;
+                        *{
+                            font-size: 22px;
+                        }
+                    }
+                    @include media("sm"){
+                        width: 300px;
+                        height: 50px;
+                        font-size: 18px;
+                        *{
+                            font-size: 22px;
+                        }
+                    }
+                    @include media("md"){
+                        width: 350px;
+                        height: 70px;
+                        font-size: 20px;
+                        *{
+                            font-size: 25px;
+                        }
+                    }
+                    @include media("lg"){
+                        width: 350px;
+                        height: 70px;
+                        font-size: 20px;
+                        *{
+                            font-size: 25px;
+                        }
+                    }
+                    @include media("xl"){
+                        width: 350px;
+                        height: 70px;
+                        font-size: 20px;
+                        *{
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+        }
+        >.Photo{
+            background-image: url("/assets/images/main_profile.jpeg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            /* Responsive */
+            @include media("xs"){
+                width: 100%;
+                height: 50vh;
+            }
+            @include media("sm"){
+                width: 100%;
+                height: 50vh;
+            }
+            @include media("md"){
+                width: 50%;
+                height: 100%;
+            }
+            @include media("lg"){
+                width: 50%;
+                height: 100%;
+            }
+            @include media("xl"){
+                width: 50%;
+                height: 100%;
+            }
+
+            >.SocialIcons{
+                position: relative;
+                z-index: 100;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                column-gap: 10px;
+                top: 20px;
+                right: calc(-100% + 20px);
+                transform: translateX(-100%);
+                width: 50%;
+                align-items: center;
+                justify-content: flex-end;
+
+                >button{
+                    background: rgba(255, 255, 255, 0.05);
+                    transition: background linear 0.25s;
+                    &:hover{
+                        background: rgba(255, 255, 255, 0.25);
+                    }
+                    *{
+                        font-size: 50px;
+                    }
+                }
+            }
+        }
+    }
+}

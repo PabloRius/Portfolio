@@ -1,11 +1,9 @@
+// Sub-styles
+@use "./feed.scss";
+
 @import "../mixins.scss";
 @import "../variables.scss";
-
-$sidebar-xl:110px;
-$sidebar-lg:115px;
-$sidebar-md:115px;
-$sidebar-sm:115px;
-$sidebar-xs:115px;
+@import "../animations/animations.scss";
 
 .DefaultView{
     width: 100%;
@@ -21,66 +19,159 @@ $sidebar-xs:115px;
         flex-direction: column;
         
         .MainSidebar{
-            height: 100vh;
-            border-right: 1px solid $grey-dark;
             position: fixed;
             background-color: $white;
             z-index: $layer1;
             display: flex;
-            flex-direction: column;
             align-items: center;
 
             /* Responsive */
             @include media("xs"){
-                width: $sidebar-xs;
+                border-bottom: 1px solid $grey-dark;
+                flex-direction: row;
+                height: $sidebar-xs;
+                width: 100%;
             }
             @include media("sm"){
-                width: $sidebar-sm;
+                border-bottom: 1px solid $grey-dark;
+                flex-direction: row;
+                height: $sidebar-sm;
+                width: 100%;
             }
             @include media("md"){
+                border-right: 1px solid $grey-dark;
+                flex-direction: column;
                 width: $sidebar-md;
+                height: 100vh;  
             }
             @include media("lg"){
+                border-right: 1px solid $grey-dark;
+                flex-direction: column;
                 width: $sidebar-lg;
+                height: 100vh;  
             }
             @include media("xl"){
+                border-right: 1px solid $grey-dark;
+                flex-direction: column;
                 width: $sidebar-xl;
+                height: 100vh;  
             }
 
             >.ToggleDrawerIcon{
-                height: "10%";
-                display: "flex";
-                flex-direction: "row";
-                justify-content: "center";
-                align-items: "center";
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
                 margin-top: 5px;
+                
+                /* Responsive */
+                @include media("xs"){
+                    width: 20%;
+                }
+                @include media("sm"){
+                    width: 20%;
+                }
+                @include media("md"){
+                    height: 5%;
+                }
+                @include media("lg"){
+                    height: 5%;
+                }
+                @include media("xl"){
+                    height: 5%;
+                }
 
                 *{
                     color: $grey-dark;
                 }
             }
+
+            >.Title{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                /* Responsive */
+                @include media("xs"){
+                    width: 60%;
+                }
+                @include media("sm"){
+                    width: 60%;
+                }
+                @include media("md"){
+                    height: 90%;
+                }
+                @include media("lg"){
+                    height: 90%;
+                }
+                @include media("xl"){
+                    height: 90%;
+                }
+                
+                *{
+                    color: $grey-dark;
+                }
+
+                .Content{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    width: max-content;
+                    height: max-content;
+                    text-wrap: nowrap;
+                    white-space: nowrap;
+                    
+                    /* Responsive */
+                    @include media("xs"){
+                        transform: rotate(0);
+                    }
+                    @include media("sm"){
+                        transform: rotate(0);
+                    }
+                    @include media("md"){
+                        transform: rotate(270deg);
+                    }
+                    @include media("lg"){
+                        transform: rotate(270deg);
+                    }
+                    @include media("xl"){
+                        transform: rotate(270deg);
+                    }
+
+                    h1{
+                        font-size: 35px;
+                    }
+                    h4{
+                        font-size: 20px;
+                    }
+                }
+            }
         }
         .MainBody, .MainDrawer{
-            height: 100vh;
-
             /* Responsive */
             @include media("xs"){
-                width: calc(100% - $sidebar-xs - 1px);
-                margin-left: calc($sidebar-xs + 1px);
+                height: calc(100vh - $sidebar-xs - 1px);
+                width: 100%;
+                margin-top: calc($sidebar-xs + 1px);
             }
             @include media("sm"){
-                width: calc(100% - $sidebar-sm - 1px);
-                margin-left: calc($sidebar-sm + 1px);
+                height: calc(100vh - $sidebar-xs - 1px);
+                width: 100%;
+                margin-top: calc($sidebar-sm + 1px);
             }
             @include media("md"){
+                height: 100vh;
                 width: calc(100% - $sidebar-md - 1px);
                 margin-left: calc($sidebar-md + 1px);
             }
             @include media("lg"){
+                height: 100vh;
                 width: calc(100% - $sidebar-lg - 1px);
                 margin-left: calc($sidebar-lg + 1px);
             }
             @include media("xl"){
+                height: 100vh;
                 width: calc(100% - $sidebar-xl - 1px);
                 margin-left: calc($sidebar-xl + 1px);
             }
@@ -92,51 +183,97 @@ $sidebar-xs:115px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            transform-origin: right;
             transition: transform 0.15s ease-in;
 
-            &.on{
-                transform: scaleX(1);
+            /* Responsive */
+            @include media("xs"){
+                transform-origin: bottom;
+                &.on{
+                    transform: scaleY(1);
+                }
+                &.off{
+                    transform: scaleY(0);
+                }
             }
-            &.off{
-                transform: scaleX(0);
+            @include media("sm"){
+                transform-origin: bottom;
+                &.on{
+                    transform: scaleY(1);
+                }
+                &.off{
+                    transform: scaleY(0);
+                }
+            }
+            @include media("md"){
+                transform-origin: right;
+                &.on{
+                    transform: scaleX(1);
+                }
+                &.off{
+                    transform: scaleX(0);
+                }
+            }
+            @include media("lg"){
+                transform-origin: right;
+                &.on{
+                    transform: scaleX(1);
+                }
+                &.off{
+                    transform: scaleX(0);
+                }
+            }
+            @include media("xl"){
+                transform-origin: right;
+                &.on{
+                    transform: scaleX(1);
+                }
+                &.off{
+                    transform: scaleX(0);
+                }
             }
 
-            .Content{
-                height: 55%;
-                width: 50%;
+            >.Content{
                 margin: auto auto;
                 display: flex;
                 flex-direction: column;
-                align-items: flex-start;
                 justify-content: space-around;
+
+                /* Responsive */
+                @include media("xs"){
+                    height: 80%;
+                    width: 100%;
+                    align-items: center;
+                }
+                @include media("sm"){
+                    height: 80%;
+                    width: 100%;
+                    align-items: center;
+                }
+                @include media("md"){
+                    height: 55%;
+                    width: 50%;
+                    align-items: flex-start;
+                }
+                @include media("lg"){
+                    height: 55%;
+                    width: 50%;
+                    align-items: flex-start;
+                }
+                @include media("xl"){
+                    height: 55%;
+                    width: 50%;
+                    align-items: flex-start;
+                }
                 .DrawerItem{
                     font-weight: 400;
                     font-size: 40px;
-                    position: relative;
-                    display: inline-block;
                     cursor: pointer;
                     transition: transform 0.45s ease-out;
                     transform-origin: bottom left;
+                    @include underline-effect($grey-dark);
                     &:hover{
                         transform: scale(1.2);
                     }
-                }
-                .DrawerItem::after{
-                    content: '';
-                    position: absolute;
-                    width: 100%;
-                    transform: scaleX(0);
-                    height: 2px;
-                    bottom: 0;
-                    left: 0;
-                    background-color: $grey-dark;
-                    transform-origin: bottom right;
-                    transition: transform 0.45s ease-out;
-                }
-                .DrawerItem:hover::after{
-                    transform: scaleX(1);
-                    transform-origin: bottom left;
                 }
             }
         }

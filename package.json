@@ -2,9 +2,11 @@
   "name": "portfolio-ts",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/PabloRius/Portfolio/",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@fontsource/caveat": "^5.0.17",
     "@fontsource/roboto": "^5.0.12",
     "@mui/base": "^5.0.0-beta.40",
     "@mui/icons-material": "^5.15.15",
