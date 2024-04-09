@@ -1,12 +1,13 @@
 name: Deploy Pages
 
 on:
+  workflow_dispatch:
   push:
     branches:
-    - main
+      - main
   pull_request:
     branches:
-    - main
+      - main
 
 permissions:
   contents: write
