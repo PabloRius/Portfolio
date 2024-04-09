@@ -51,7 +51,7 @@ export function Presentation(){
                 <div className="Body">
                     <h2>Hello. I'm Pablo</h2>
                     <p className="Content">
-                        I'm a Computer Science graduate currently embarking on my
+                        I'm a recent Computer Science graduate currently embarking on my
                         professional journey as an intern at NTT Data. I'm passionate about
                         soaking up knowledge in the dynamic realm of software development and
                         project management. My ultimate dream is to traverse the globe with my
