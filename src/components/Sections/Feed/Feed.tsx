@@ -1,10 +1,12 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import { Presentation } from "./Subsections/Presentation";
+// import { Timeline } from "./Subsections/Timeline";
 
-export function Feed(){
+export const Feed = ():ReactElement => {
     return (
         <div className="MainFeed">
             <Presentation />
+            {/* <Timeline /> */}
         </div>
     )
 }

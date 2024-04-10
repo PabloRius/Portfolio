@@ -6,7 +6,7 @@ interface SidebarProps{
     toggleDrawer:()=>void
 }
 
-export function Sidebar({toggleDrawer}:SidebarProps){
+export const Sidebar = ({toggleDrawer}:SidebarProps) => {
     return (
         <div className="MainSidebar">
             <div className="ToggleDrawerIcon">

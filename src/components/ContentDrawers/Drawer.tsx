@@ -7,7 +7,7 @@ interface DrawerProps{
     routes: RouteObject[]
 }
 
-export function Drawer({active, toggle, routes}:DrawerProps){
+export const Drawer = ({active, toggle, routes}:DrawerProps) => {
     return (
         <div className={`MainDrawer ${active ? "on": "off"}`}>
             <div className="Content">

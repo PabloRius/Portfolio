@@ -35,7 +35,7 @@ const socials:socialPocket[] = [
     },
 ]
 
-export function Presentation(){
+export const Presentation = () => {
     return (
         <div className="Presentation">
             <div className="Text">
