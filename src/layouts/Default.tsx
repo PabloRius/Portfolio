@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Route, RouterProvider, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
-import { defaultRouter, routes } from "../routes/routes";
+import { routes } from "../routes/routes";
 
 import { MainDrawer, MainSidebar } from "../components"
 
