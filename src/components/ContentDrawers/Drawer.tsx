@@ -15,7 +15,7 @@ export function Drawer({active, toggle, routes}:DrawerProps){
                     return (
                     <Link 
                         className="DrawerItem" 
-                        to={route.path!} 
+                        to={`${route.path!}`} 
                         onClick={()=>{toggle()}} 
                         key={index}>
                             { route.id }

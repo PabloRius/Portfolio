@@ -10,13 +10,14 @@ export function Default(){
     const toggleDrawer = () => {
         setDrawer(prevState=>!prevState)
     }
+
     return (
         <div className="DefaultLayout">
             <div className="MainBody">
                 <Routes>
                     {routes.map((route)=>{
                         return (
-                            <Route element={route.element} path={route.path} key={route.id} />
+                            <Route element={route.element} path={`/${route.path}`} key={route.id} />
                         )
                     })}
                 </Routes>

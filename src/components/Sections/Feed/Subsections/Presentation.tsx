@@ -61,8 +61,11 @@ export function Presentation(){
                     </p>
                 </div>
                 <div className="Files">
-                <Button variant="contained" endIcon={<DownloadRoundedIcon />}>
-                    Download my Resume
+                <Button 
+                    variant="contained" 
+                    endIcon={<DownloadRoundedIcon />} 
+                    onClick={()=>{window.open("https://drive.google.com/uc?export=download&id=1GaIXqKC1Jf-6DQ71H7ZWAYcPh_yN3Glf");}}>
+                        Download my Resume
                 </Button>
                 </div>
             </div>
