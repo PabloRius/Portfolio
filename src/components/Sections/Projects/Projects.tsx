@@ -20,6 +20,7 @@ export const Projects = ({projects}:ProjectsProps) => {
                         </div>
                     )
                 }
+                return <></>
             })}
         </div>
     )
