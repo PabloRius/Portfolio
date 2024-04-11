@@ -8,20 +8,22 @@ export const Projects = ({projects}:ProjectsProps) => {
 
     return (
         <div className="Projects">
-            <div className="Background" />
             <h2>My Project Vault</h2>
-            {projects.map((project)=>{
-                if(!project.fork){
-                    return (
-                        <div className="Project" key={project.name}>
-                            <h3>{project.name}</h3>
-                            <p className="Subtitle">{project.description}</p>
-                            <p className="Language">{project.language}</p>
-                        </div>
-                    )
-                }
-                return <></>
-            })}
+            <div className="Body">
+                {projects.map((project)=>{
+                    if(!project.fork){
+                        return (
+                            <div className="Project" key={project.name}>
+                                <h3>{project.name}</h3>
+                                <p className="Subtitle">{project.description}</p>
+                                <p className="Language">{project.language}</p>
+                            </div>
+                        )
+                    }
+                    return <></>
+                })}
+            </div>
+            <div className="Background" />
         </div>
     )
 }

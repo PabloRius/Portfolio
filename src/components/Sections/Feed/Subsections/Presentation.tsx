@@ -68,14 +68,15 @@ export const Presentation = () => {
                         Download my Resume
                 </Button>
                 </div>
-            </div>
-            <div className="Photo" >
-                <div className="SocialIcons">
-                    { socials.map((social)=>{
-                        return (
-                            <IconButton onClick={()=>{ window.open(social.href, '_blank') }} children={<social.icon sx={{fill:social.color}} />} key={social.id} />
-                        )
-                    }) }
+                <div className="Photo" >
+                    <div className="Background"></div>
+                    <div className="SocialIcons">
+                        { socials.map((social)=>{
+                            return (
+                                <IconButton onClick={()=>{ window.open(social.href, '_blank') }} children={<social.icon sx={{fill:social.color}} />} key={social.id} />
+                            )
+                        }) }
+                    </div>
                 </div>
             </div>
         </div>

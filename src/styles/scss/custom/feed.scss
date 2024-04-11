@@ -7,62 +7,65 @@
     flex-direction: column;
     >.Presentation{
         /* Responsive */
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
         @include media("xs"){
             height: auto;
-            display: flex;
             flex-direction: column;
         }
         @include media("sm"){
             height: auto;
-            display: flex;
             flex-direction: column;
         }
         @include media("md"){
-            height: 100vh;
-            display: flex;
+            height: auto;
             flex-direction: row;
         }
         @include media("lg"){
-            height: 100vh;
-            display: flex;
+            min-height: 100vh;
             flex-direction: row;
         }
         @include media("xl"){
-            height: 100vh;
-            display: flex;
+            min-height: 100vh;
             flex-direction: row;
         }
         >.Text{
             display: flex;
             flex-direction: column;
+            position: relative;
+            height: auto;
+            row-gap: 30px;
+            justify-content: space-around;
             /* Responsive */
             @include media("xs"){
                 width: calc(100% - 30px);
-                height: calc(100vh - $sidebar-xs - 11px);
+                min-height: calc(100vh - $sidebar-xs - 11px);
                 padding: 10px 15px 0 15px
             }
             @include media("sm"){
                 width: calc(100% - 30px);
-                height: calc(100vh - $sidebar-sm - 11px);
+                min-height: calc(100vh - $sidebar-sm - 11px);
                 padding: 10px 15px 0 15px
             }
             @include media("md"){
-                width: calc(50% - 60px);
+                width: calc(100% - 60px);
                 padding: 10px 30px 0 30px;
-                row-gap: 150px;
-                justify-content: space-around;
+                min-height: 100vh;
             }
             @include media("lg"){
-                width: calc(50% - 60px);
+                width: calc(100% - 60px);
                 padding: 10px 30px 0 30px;
-                row-gap: 150px;
-                justify-content: space-around;
+                min-height: 100vh;
             }
             @include media("xl"){
-                width: calc(50% - 60px);
+                width: calc(100% - 60px);
                 padding: 10px 30px 0 30px;
-                row-gap: 150px;
-                justify-content: space-around;
+                min-height: 100vh;
+            }
+            >*{
+                z-index: $basing;
             }
             
             >.Email{
@@ -70,27 +73,9 @@
                 flex-direction: row;
                 margin: 10px 0;
                 column-gap: 5px;
-                /* Responsive */
-                @include media("xs"){
-                    justify-content: flex-end;
-                    height: 5%;
-                }
-                @include media("sm"){
-                    justify-content: flex-end;
-                    height: 5%;
-                }
-                @include media("md"){
-                    justify-content: flex-start;
-                    height: 5%;
-                }
-                @include media("lg"){
-                    justify-content: flex-start;
-                    height: 5%;
-                }
-                @include media("xl"){
-                    justify-content: flex-start;
-                    height: 5%;
-                }
+                width: min-content;
+                height: 5%;
+                justify-content: flex-start;
 
                 >.Redirect{
                     cursor: pointer;
@@ -101,6 +86,7 @@
                 display: flex;
                 flex-direction: column;
                 row-gap: 15px;
+                justify-content: center;
                 /* Responsive */
                 @include media("xs"){
                     height: 50%;
@@ -109,13 +95,13 @@
                     height: 50%;
                 }
                 @include media("md"){
-                    height: 35%;
+                    height: 70%;
                 }
                 @include media("lg"){
-                    height: 35%;
+                    height: 60%;
                 }
                 @include media("xl"){
-                    height: 35%;
+                    height: 55%;
                 }
                 h2{
                     /* Responsive */
@@ -146,7 +132,7 @@
                         width: 100%;
                     }
                     @include media("md"){
-                        font-size: 18px;
+                        font-size: 16px;
                         text-align: justify;
                         width: 85%;
                     }
@@ -174,13 +160,13 @@
                     height: 45%;
                 }
                 @include media("md"){
-                    height: 60%;
+                    height: 25%;
                 }
                 @include media("lg"){
-                    height: 60%;
+                    height: 35%;
                 }
                 @include media("xl"){
-                    height: 60%;
+                    height: 40%;
                 }
                 >button{
                     /* Responsive */
@@ -226,56 +212,102 @@
                     }
                 }
             }
-        }
-        >.Photo{
-            background-image: url("/assets/images/main_profile.jpeg");
-            background-size: cover;
-            background-repeat: no-repeat;
-            position: relative;
-            /* Responsive */
-            @include media("xs"){
+            >.Photo{
+                position: absolute;
+                top: 0;
+                left: 0;
                 width: 100%;
-                height: 50vh;
-            }
-            @include media("sm"){
-                width: 100%;
-                height: 50vh;
-            }
-            @include media("md"){
-                width: 50%;
                 height: 100%;
-            }
-            @include media("lg"){
-                width: 50%;
-                height: 100%;
-            }
-            @include media("xl"){
-                width: 50%;
-                height: 100%;
-            }
-
-            >.SocialIcons{
-                position: relative;
-                z-index: 100;
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-                column-gap: 10px;
-                top: 20px;
-                right: calc(-100% + 20px);
-                transform: translateX(-100%);
-                width: 50%;
-                align-items: center;
-                justify-content: flex-end;
-
-                >button{
-                    background: rgba(255, 255, 255, 0.05);
-                    transition: background linear 0.25s;
-                    &:hover{
-                        background: rgba(255, 255, 255, 0.25);
+                z-index: $background;
+                >.Background{
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0.25;
+                    /* Responsive */
+                    @include media("xs"){
+                    background-image: url("/assets/images/main_profile.png");
                     }
-                    *{
-                        font-size: 50px;
+                    @include media("sm"){
+                    background-image: url("/assets/images/main_profile.png");
+                    }
+                    @include media("md"){
+                    background-image: url("/assets/images/main_profile.png");
+                    }
+                    @include media("lg"){
+                        background-image: url("/assets/images/main_profile_extended.png");
+                    }
+                    @include media("xl"){
+                        background-image: url("/assets/images/main_profile_extended.png");
+                    }
+                }
+    
+                >.SocialIcons{
+                    position: absolute;
+                    z-index: $overlay;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: center;
+                    justify-content: flex-end;
+                    /* Responsive */
+                    @include media("xs"){
+                        top: 5px;
+                        right: 5px;
+                        column-gap: 0;
+                        max-width: 30%;
+                    }
+                    @include media("sm"){
+                        top: 10px;
+                        right: 10px;
+                        column-gap: 5px;
+                        max-width: 35%;
+                    }
+                    @include media("md"){
+                        top: 10px;
+                        right: 10px;
+                        column-gap: 5px;
+                        max-width: 35%;
+                    }
+                    @include media("lg"){
+                        top: 15px;
+                        right: 15px;
+                        column-gap: 10px;
+                        max-width: 50%;
+                    }
+                    @include media("xl"){
+                        top: 20px;
+                        right: 20px;
+                        column-gap: 10px;
+                        max-width: 50%;
+                    }
+    
+                    >button{
+                        background: rgba(255, 255, 255, 0.05);
+                        transition: background linear 0.25s;
+                        &:hover{
+                            background: rgba(255, 255, 255, 0.25);
+                        }
+                        *{
+                            /* Responsive */
+                            @include media("xs"){
+                                font-size: 32px;
+                            }
+                            @include media("sm"){
+                                font-size: 40px;
+                            }
+                            @include media("md"){
+                                font-size: 45px;
+                            }
+                            @include media("lg"){
+                                font-size: 50px;
+                            }
+                            @include media("xl"){
+                                font-size: 50px;
+                            }
+                        }
                     }
                 }
             }

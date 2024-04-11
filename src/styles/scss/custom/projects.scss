@@ -10,100 +10,134 @@ $project-xs: 380px;
 
 .Projects{
     position: relative;
-    width: 95%;
-    height: 100vh;
-    margin: 0 auto;
+    min-height: 100vh;
+    margin: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: center;
     align-items: center;
-    align-content: center;
     column-gap: 30px;
     row-gap: 30px;
 
     >.Background{
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
-        position: absolute;
         background-image: url("/assets/images/github.png");
         background-repeat: no-repeat;
         background-position: 50%;
-        background-size: 35%;
-        opacity: 0.25;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
+        opacity: 0.15;
+        z-index: $background;
+        /* Responsive */
+        @include media("xs"){
+            height: calc(100vh - $sidebar-xs - 1px);
+            width: 100%;
+            margin-top: calc($sidebar-xs + 1px);
+            background-size: 50%;
+        }
+        @include media("sm"){
+            height: calc(100vh - $sidebar-xs - 1px);
+            width: 100%;
+            margin-top: calc($sidebar-sm + 1px);
+            background-size: 45%;
+        }
+        @include media("md"){
+            height: 100vh;
+            width: calc(100% - $sidebar-md - 1px);
+            margin-left: calc($sidebar-md + 1px);
+            background-size: 35%;
+        }
+        @include media("lg"){
+            height: 100vh;
+            width: calc(100% - $sidebar-lg - 1px);
+            margin-left: calc($sidebar-lg + 1px);
+            background-size: 35%;
+        }
+        @include media("xl"){
+            min-height: 100vh;
+            width: calc(100% - $sidebar-xl - 1px);
+            margin-left: calc($sidebar-xl + 1px);
+            background-size: 35%;
+        }
     }
 
     >h2{
-        position: absolute;
-        top: 70px;
-        left: 50%;
-        transform: translateX(-50%);
+        margin-top: 20px;
         font-size: 50px;
+        height: 10%;
     }
 
-    >.Project{
-        background-color: #ffffff;
-        border-radius: 20px;
-        border: #e2e6ea solid 1px;
+    >.Body{
         display: flex;
-        flex-direction: column;
-        row-gap: 5px;
-        opacity: 1;
-        z-index: 50;
-        box-shadow: 0 3px 15px 0 $black-light ;
-        transition: transform 0.5s ease-in-out;
-
-        &:hover{
-            transform: scale(1.025);
-        }
-
-        /* Responsive */
-        @include media("xs"){
-            width: calc($project-xs - 30px);
-            height: 120px;   
-            padding: 15px;
-        }
-        @include media("sm"){
-            width: calc($project-sm - 30px);
-            height: 120px;   
-            padding: 15px;
-        }
-        @include media("md"){
-            width: calc($project-md - 30px);
-            height: 120px;   
-            padding: 17px;
-        }
-        @include media("lg"){
-            width: calc($project-lg - 30px);
-            height: 120px;   
-            padding: 17px;
-        }
-        @include media("xl"){
-            width: calc($project-xl - 30px);
-            height: 120px;   
-            padding: 17px;
-        }
-        >h3{
-            height: 20%;
-            font-size: 18px;
-            color: #0970e0;
-            width: max-content;
-            @include underline-effect(#0970e0);
-            cursor: pointer;
-        }
-        >p{
-            font-size: 14px;
-        }
-        >.Subtitle{
-            height: calc(60% - 10px);
-            overflow-y: auto;
-        }
-        >.Language{
-            height: 20%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        row-gap: 20px;
+        column-gap: 20px;
+        margin-bottom: 20px;
+        min-height: calc(85vh - 40px);
+        >.Project{
+            background-color: #ffffff;
+            border-radius: 20px;
+            border: #e2e6ea solid 1px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            opacity: 1;
+            z-index: $basing;
+            box-shadow: 0 3px 15px 0 $black-light ;
+            transition: transform 0.5s ease-in-out;
+    
+            &:hover{
+                transform: scale(1.025);
+            }
+    
+            /* Responsive */
+            @include media("xs"){
+                width: calc($project-xs - 30px);
+                height: 120px;   
+                padding: 15px;
+            }
+            @include media("sm"){
+                width: calc($project-sm - 30px);
+                height: 120px;   
+                padding: 15px;
+            }
+            @include media("md"){
+                width: calc($project-md - 30px);
+                height: 120px;   
+                padding: 17px;
+            }
+            @include media("lg"){
+                width: calc($project-lg - 30px);
+                height: 120px;   
+                padding: 17px;
+            }
+            @include media("xl"){
+                width: calc($project-xl - 30px);
+                height: 120px;   
+                padding: 17px;
+            }
+            >h3{
+                height: 20%;
+                font-size: 18px;
+                color: #0970e0;
+                width: max-content;
+                @include underline-effect(#0970e0);
+                cursor: pointer;
+            }
+            >p{
+                font-size: 14px;
+            }
+            >.Subtitle{
+                height: calc(60% - 10px);
+                overflow-y: auto;
+            }
+            >.Language{
+                height: 20%;
+            }
         }
     }
 }
