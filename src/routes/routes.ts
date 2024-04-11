@@ -7,17 +7,23 @@ const routes = (projects?: any[]): RouteObject[] => {
     {
       id: "Home",
       path: ``,
-      element: MainFeed(),
+      element: projects
+        ? MainFeed({ projects: projects })
+        : MainFeed({ projects: [] }),
     },
     {
       id: "About Me",
       path: `about_me`,
-      element: MainFeed(),
+      element: projects
+        ? MainFeed({ projects: projects })
+        : MainFeed({ projects: [] }),
     },
     {
       id: "CV",
       path: `resume`,
-      element: MainFeed(),
+      element: projects
+        ? MainFeed({ projects: projects })
+        : MainFeed({ projects: [] }),
     },
     {
       id: "Projects",
@@ -29,7 +35,9 @@ const routes = (projects?: any[]): RouteObject[] => {
     {
       id: "Contact",
       path: `contact`,
-      element: MainFeed(),
+      element: projects
+        ? MainFeed({ projects: projects })
+        : MainFeed({ projects: [] }),
     },
   ];
 };
