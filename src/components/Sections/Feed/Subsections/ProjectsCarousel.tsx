@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -23,6 +23,17 @@ export const ProjectsCarousel = ({cards}:ProjectsCarouselProps) => {
             ? 4 : 0
     ]);
     const [auto, setAuto] = useState<boolean>(true)
+    
+    let shift_right = useCallback(() => {
+        setIndex(prev=>[
+            prev[0] === 0 ? cards.length - 1: prev[0] - 1,
+            prev[0],
+            prev[1],
+            prev[2],
+            prev[3],
+        ])
+    },[cards.length])
+
     useEffect(()=>{
         if(cards.length > 0){
             setIndex([
@@ -41,11 +52,11 @@ export const ProjectsCarousel = ({cards}:ProjectsCarouselProps) => {
     useEffect(()=>{
         const interval = setInterval(()=>{
             if(auto){
-                shiftRight()
+                shift_right()
             }
         }, AUTO)
         return () => clearInterval(interval)
-    },[auto, shiftRight])
+    },[auto, shift_right])
 
     const delayAuto = () => {
         setAuto(false)
@@ -53,15 +64,7 @@ export const ProjectsCarousel = ({cards}:ProjectsCarouselProps) => {
             setAuto(true)
         }, AUTO)
     }
-    const shiftRight = () => {
-        setIndex(prev=>[
-            prev[0] === 0 ? cards.length - 1: prev[0] - 1,
-            prev[0],
-            prev[1],
-            prev[2],
-            prev[3],
-        ])
-    }
+    
     const shiftLeft = () => {
         setIndex(prev=>[
             prev[1],
@@ -94,7 +97,7 @@ export const ProjectsCarousel = ({cards}:ProjectsCarouselProps) => {
             <div className="CarouselShiftRight">
                 <IconButton children={<ArrowForwardIosIcon />} onClick={()=>{
                     delayAuto()
-                    shiftRight()
+                    shift_right()
                 }} />
             </div>
         </div>
