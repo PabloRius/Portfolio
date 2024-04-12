@@ -45,7 +45,7 @@ export const ProjectsCarousel = ({cards}:ProjectsCarouselProps) => {
             }
         }, AUTO)
         return () => clearInterval(interval)
-    },[auto])
+    },[auto, shiftRight])
 
     const delayAuto = () => {
         setAuto(false)
