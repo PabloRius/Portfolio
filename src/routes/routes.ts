@@ -2,7 +2,7 @@ import { RouteObject } from "react-router-dom";
 
 import { MainFeed, Projects } from "../components";
 
-const routes = (projects?: any[]): RouteObject[] => {
+const routes = (projects: any[], expandedProject: any, setExpandedProject:(project: any)=> void): RouteObject[] => {
   return [
     {
       id: "Home",
@@ -29,8 +29,8 @@ const routes = (projects?: any[]): RouteObject[] => {
       id: "Projects",
       path: `projects`,
       element: projects
-        ? Projects({ projects: projects })
-        : Projects({ projects: [] }),
+        ? Projects({ projects: projects, expanded: expandedProject, setExpanded: setExpandedProject })
+        : Projects({ projects: [], expanded: null, setExpanded: setExpandedProject }),
     },
     {
       id: "Contact",

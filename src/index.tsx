@@ -6,6 +6,7 @@ import App from "./App";
 
 import "./styles/scss/main.scss";
 import "@fontsource/caveat"
+import "@fontsource/source-code-pro";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
