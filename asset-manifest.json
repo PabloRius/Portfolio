@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Portfolio/static/css/main.ced62fe8.css",
-    "main.js": "/Portfolio/static/js/main.5f616091.js",
+    "main.css": "/Portfolio/static/css/main.6f321889.css",
+    "main.js": "/Portfolio/static/js/main.bc683f5c.js",
     "static/media/main_profile_extended.png": "/Portfolio/static/media/main_profile_extended.09e095701eae6261f448.png",
     "static/media/main_profile.png": "/Portfolio/static/media/main_profile.5751acc389d2485e11f5.png",
     "static/media/caveat-latin-400-normal.woff": "/Portfolio/static/media/caveat-latin-400-normal.d620cb0b4829219d94d6.woff",
@@ -12,13 +12,27 @@
     "static/media/caveat-cyrillic-ext-400-normal.woff2": "/Portfolio/static/media/caveat-cyrillic-ext-400-normal.cd25e137b7a25d63e073.woff2",
     "static/media/caveat-latin-ext-400-normal.woff": "/Portfolio/static/media/caveat-latin-ext-400-normal.11493c4c60e96e403be4.woff",
     "static/media/github.png": "/Portfolio/static/media/github.273426b01dd0e008a2a1.png",
+    "static/media/source-code-pro-latin-ext-400-normal.woff": "/Portfolio/static/media/source-code-pro-latin-ext-400-normal.eae6c81546be08111951.woff",
     "static/media/caveat-latin-ext-400-normal.woff2": "/Portfolio/static/media/caveat-latin-ext-400-normal.5d8680920919972a8d92.woff2",
+    "static/media/source-code-pro-latin-400-normal.woff": "/Portfolio/static/media/source-code-pro-latin-400-normal.ec75d7e8758fdd40c6e1.woff",
+    "static/media/source-code-pro-latin-ext-400-normal.woff2": "/Portfolio/static/media/source-code-pro-latin-ext-400-normal.10c18dee3e7a856db081.woff2",
+    "static/media/source-code-pro-latin-400-normal.woff2": "/Portfolio/static/media/source-code-pro-latin-400-normal.cfab30709f780ad1a01a.woff2",
+    "static/media/source-code-pro-cyrillic-400-normal.woff": "/Portfolio/static/media/source-code-pro-cyrillic-400-normal.17dbdcf8ba286c96038d.woff",
+    "static/media/source-code-pro-greek-400-normal.woff": "/Portfolio/static/media/source-code-pro-greek-400-normal.f047e27a3ddf7dc04ee8.woff",
+    "static/media/source-code-pro-cyrillic-400-normal.woff2": "/Portfolio/static/media/source-code-pro-cyrillic-400-normal.58ba5cc58e1de1df233b.woff2",
+    "static/media/source-code-pro-vietnamese-400-normal.woff": "/Portfolio/static/media/source-code-pro-vietnamese-400-normal.c87c7de6edcf8b738270.woff",
+    "static/media/source-code-pro-cyrillic-ext-400-normal.woff": "/Portfolio/static/media/source-code-pro-cyrillic-ext-400-normal.ec9f9b00844cb13d2a57.woff",
+    "static/media/source-code-pro-greek-400-normal.woff2": "/Portfolio/static/media/source-code-pro-greek-400-normal.56098bba2e2c96d340e8.woff2",
+    "static/media/source-code-pro-vietnamese-400-normal.woff2": "/Portfolio/static/media/source-code-pro-vietnamese-400-normal.421a5d71d9d281edc42a.woff2",
+    "static/media/source-code-pro-cyrillic-ext-400-normal.woff2": "/Portfolio/static/media/source-code-pro-cyrillic-ext-400-normal.e1b23467e5092e12f87d.woff2",
+    "static/media/source-code-pro-greek-ext-400-normal.woff": "/Portfolio/static/media/source-code-pro-greek-ext-400-normal.43eebc8c38dbbf4e8f64.woff",
+    "static/media/source-code-pro-greek-ext-400-normal.woff2": "/Portfolio/static/media/source-code-pro-greek-ext-400-normal.2ee4575eb67316ad68ab.woff2",
     "index.html": "/Portfolio/index.html",
-    "main.ced62fe8.css.map": "/Portfolio/static/css/main.ced62fe8.css.map",
-    "main.5f616091.js.map": "/Portfolio/static/js/main.5f616091.js.map"
+    "main.6f321889.css.map": "/Portfolio/static/css/main.6f321889.css.map",
+    "main.bc683f5c.js.map": "/Portfolio/static/js/main.bc683f5c.js.map"
   },
   "entrypoints": [
-    "static/css/main.ced62fe8.css",
-    "static/js/main.5f616091.js"
+    "static/css/main.6f321889.css",
+    "static/js/main.bc683f5c.js"
   ]
 }
