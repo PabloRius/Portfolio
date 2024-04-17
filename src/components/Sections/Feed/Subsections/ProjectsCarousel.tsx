@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { IconButton } from "@mui/material";
+import { Project } from "../../../ContentDrawers/Project";
 
 const AUTO:number = 5000
 
@@ -52,7 +53,7 @@ export const ProjectsCarousel = ({cards}:ProjectsCarouselProps) => {
     useEffect(()=>{
         const interval = setInterval(()=>{
             if(auto){
-                shift_right()
+                // shift_right()
             }
         }, AUTO)
         return () => clearInterval(interval)
@@ -86,11 +87,7 @@ export const ProjectsCarousel = ({cards}:ProjectsCarouselProps) => {
             <div className="Body">
                 {cards.map((card, id)=>{
                     return (
-                        <div key={id} className={`Card ${id === index[0] ? "next-left": id === index[1] ? "left": id === index[2] ? "center": id === index[3] ? "right": id === index[4] ? "next-right": "hidden"}`}>
-                            <h3>{card.name}</h3>
-                            <p className="Subtitle">{card.description}</p>
-                            <p className="Language">{card.language}</p>
-                        </div>
+                        Project({project:card, uuid: id, className: `Card ${id === index[0] ? "next-left": id === index[1] ? "left": id === index[2] ? "center": id === index[3] ? "right": id === index[4] ? "next-right": "hidden"}`})
                     )
                 })}
             </div>

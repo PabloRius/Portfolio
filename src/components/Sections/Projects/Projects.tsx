@@ -1,6 +1,5 @@
 import React from "react";
-
-import { SassOriginal, TypescriptOriginal, PythonOriginal, GoOriginalWordmark, COriginal, JavascriptOriginal  } from 'devicons-react';
+import { Project } from "../../ContentDrawers/Project";
 
 interface ProjectsProps{
     projects: any[],
@@ -8,19 +7,17 @@ interface ProjectsProps{
     setExpanded: (project: any)=> void,
 }
 
-const dev_icons:{[key:string]:React.FunctionComponent} = {
-    "SCSS": SassOriginal,
-    "TypeScript": TypescriptOriginal,
-    "Go": GoOriginalWordmark,
-    "JavaScript": JavascriptOriginal,
-    "Python": PythonOriginal,
-    "C": COriginal
-}
-
 export const Projects = ({projects, expanded, setExpanded}:ProjectsProps) => {
 
     const expandProject = (project:any) => {
         setExpanded(project)
+        setTimeout(()=>{
+            const expandedElem = document.getElementById("Expanded")
+            window.scrollTo({
+                top: expandedElem ? expandedElem.getBoundingClientRect().top + 20 + window.scrollY: 0,
+                behavior: "smooth"
+            })
+        },500)
     }
 
     return (
@@ -31,27 +28,9 @@ export const Projects = ({projects, expanded, setExpanded}:ProjectsProps) => {
             <div className="Body">
                 {projects.map((project, index)=>{
                     if(!project.fork && project.language){
-                        return (
-                            <div className="Project" key={index} >
-                                <h3 onClick={()=>{
-                                    expandProject(project)
-                                    setTimeout(()=>{
-                                        const expandedElem = document.getElementById("Expanded")
-                                        window.scrollTo({
-                                            top: expandedElem ? expandedElem.getBoundingClientRect().top + 20 + window.scrollY: 0,
-                                            behavior: "smooth"
-                                        })
-                                    },500)
-                                    
-                                }}>
-                                    {project.name}
-                                </h3>
-                                <p className="Subtitle">{project.description}</p>
-                                <div className="Language">{dev_icons[project.language]({}) || <></>}<p className="Language">{project.language}</p></div>
-                            </div>
-                        )
+                        return Project({project: project, uuid: index, interactWProject: expandProject, className: "Project"})
                     }
-                    return <></>
+                    return <div className="null" key={index}></div>
                 })}
             </div>
             {expanded && <div id="Expanded" className="Expanded" >
