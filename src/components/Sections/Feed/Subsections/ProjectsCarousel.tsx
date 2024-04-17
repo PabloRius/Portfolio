@@ -53,7 +53,7 @@ export const ProjectsCarousel = ({cards}:ProjectsCarouselProps) => {
     useEffect(()=>{
         const interval = setInterval(()=>{
             if(auto){
-                // shift_right()
+                shift_right()
             }
         }, AUTO)
         return () => clearInterval(interval)
