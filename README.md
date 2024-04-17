@@ -25,7 +25,7 @@ The dependencies must be installed first, to do so:
 ```bash
 npm install
 ```
-The dependencies form the included package.json will be installed, once it's done you can run the web with:
+The dependencies form the included package.json will be installed, once it's done you can run the applcation with:
 ```bash
 npm start
 ```
@@ -51,7 +51,7 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### Tech stack used
-<div style="display: flex; flex-direction:row">
+<div style="display: flex; flex-direction:row; column-gap: 10px">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" height="50px" width="50px" />
     <img src="https://static-00.iconduck.com/assets.00/typescript-icon-icon-1024x1024-vh3pfez8.png" height="50px" width="50px" />
     <img src="https://me-dutour-mathieu.gallerycdn.vsassets.io/extensions/me-dutour-mathieu/vscode-github-actions/3.0.1/1596182639279/Microsoft.VisualStudio.Services.Icons.Default" height="50px" width="50px" />
