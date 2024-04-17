@@ -41,3 +41,10 @@ $breakpoints:(
         @content;
     }
 }
+
+@mixin XScrollBar {
+    overflow-y: hidden;
+
+    scrollbar-width: none;
+    -webkit-scrollbar-width: none;
+}

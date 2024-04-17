@@ -15,7 +15,7 @@ export const Default = () => {
     const changeExpandedProject = (new_project:any) => {
         console.log(new_project.url + "/readme")
         Axios.get(new_project.url + "/readme").then((result:{[key:string]:any})=>{
-            setExpandedProject({"project": new_project, "md":marked(atob(result.data?.content))})
+            setExpandedProject({"project": new_project, "md":marked(decodeURIComponent(escape(atob(result.data?.content))))})
         })
     }
 

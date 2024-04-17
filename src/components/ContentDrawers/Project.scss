@@ -41,16 +41,22 @@
         padding: 17px;
     }
     
-    >h3{
+    .ProjectTitle{
         height: 20%;
-        font-size: 18px;
-        color: #0970e0;
-        width: max-content;
-        @include underline-effect(#0970e0);
-        cursor: pointer;
-        overflow-x: hidden;
-        text-overflow: ellipsis;
-        max-width: fit-content;
+        max-height: 20%;
+        @include XScrollBar;
+
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        >h3{
+            font-size: 18px;
+            color: #0970e0;
+            @include underline-effect(#0970e0);
+            cursor: pointer;
+            overflow-x: hidden;
+            white-space: nowrap;
+        }
     }
     p{
         font-size: 14px;

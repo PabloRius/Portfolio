@@ -12,12 +12,10 @@ interface ProjectProps{
 export const Project = ({project, interactWProject, className, uuid}:ProjectProps) => {
     // console.log(dev_icons[project.language]({}))
     return (
-        <div className={className} key={`${project.name}-${uuid}`} >
-            <h3 onClick={()=>{
+        <div className={className} key={`${project.name}-${uuid}`} onClick={()=>{
                 if(interactWProject){interactWProject(project)}
-            }}>
-                {project.name}
-            </h3>
+            }} >
+            <div className="ProjectTitle"><h3>{ project.name }</h3></div>
             <p className="Subtitle">{project.description}</p>
             <div className="Language">{dev_icons[project.language] || <></>}<p className="Language">{project.language}</p></div>
         </div>
