@@ -15,12 +15,12 @@
 }
 
 :root {
-  --main-green: #aeb490;
-  --main-green-light: #f1f3e8;
-  --main-green-dark: #8d9177;
-  --main-green-shade2: #8d917726;
-  --main-green-shade1: #8d917712;
-  --main-green-shade0: #8d917700;
+  --main-green: #0072c6;
+  --main-green-light: #d3ecfe;
+  --main-green-dark: #035996;
+  --main-green-shade2: #0072c626;
+  --main-green-shade1: #0072c612;
+  --main-green-shade0: #0072c600;
 }
 
 .App {
