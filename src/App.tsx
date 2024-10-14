@@ -1,11 +1,13 @@
-import React from "react";
+import { LatBar } from './components/LatBar';
+import { Main } from './pages/Main';
 
-import { DefaultView } from "./views";
+import './styles/App.css';
 
-function App() {
+export function App() {
   return (
     <div className="App">
-        <DefaultView />
+      <Main />
+      <LatBar />
     </div>
   );
 }

@@ -1,58 +1,50 @@
-## Portfolio
-My personal portfolio web page
-## About the project
-This project consists on a web page running in the **React** framework, the components are built using the **typescript** language, the deployment is automated using **Github Actions**, once a commit is made to the main branch or another branch is merged onto it, the project is built and deployed on **Github Pages**.
- 
-The result can be seen in:
-[https://pablorius.github.io/Portfolio/](https://pablorius.github.io/Portfolio/)
+# React + TypeScript + Vite
 
-### Contents
-The main page features an introduction of myself with: 
-- A link to my contact email.
-- A button to download my resume.
-- A series of icons that redirect the user to my social accounts.
-- A carousel coded from scratch showcasing some of my public prjects using the github api to gather a list of my public projects.
-- A content drawer to access the rest of the pages.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-The projects page contains a grid view of my public projects using the same method as the main page to gather them.
-- In this page the user can click on any of the projects to visualize a deeper description of it, this is done, again, using the github api to retrieve the content of the project's readme.md, decode it, convert it to a readable format, and insert it into a html component.
+Currently, two official plugins are available:
 
-## Available Scripts
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-In the project directory, you can:
-### Run the project
-The dependencies must be installed first, to do so:
-```bash
-npm install
-```
-The dependencies form the included package.json will be installed, once it's done you can run the applcation with:
-```bash
-npm start
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+
+- Configure the top-level `parserOptions` property like this:
+
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000/Portfolio](http://localhost:3000/Portfolio) to view it in your preferred browser.
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
 
-### Build the project 
-```bash
-npm run build
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
 ```
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Tech stack used
-<div style="display: flex; flex-direction:row; column-gap: 10px">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" height="50px" width="50px" />
-    <img src="https://static-00.iconduck.com/assets.00/typescript-icon-icon-1024x1024-vh3pfez8.png" height="50px" width="50px" />
-    <img src="https://me-dutour-mathieu.gallerycdn.vsassets.io/extensions/me-dutour-mathieu/vscode-github-actions/3.0.1/1596182639279/Microsoft.VisualStudio.Services.Icons.Default" height="50px" width="50px" />
-</div>
