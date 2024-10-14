@@ -5,7 +5,7 @@ import { IoLogoLinkedin } from 'react-icons/io5';
 import { IoLogoGithub } from 'react-icons/io5';
 import { IoMail } from 'react-icons/io5';
 
-import Profile from '../assets/images/Gradu_sq.jpg';
+import Profile from '../assets/images/Ams.jpg';
 
 export function HeroSection() {
   const downloadCV = () => {
