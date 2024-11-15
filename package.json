@@ -1,40 +1,18 @@
 {
-  "name": "portfoliosere",
-  "private": true,
-  "version": "0.0.0",
+  "name": "temp",
   "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "lint": "eslint --ext .ts,.tsx src",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\""
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "sync": "astro sync",
+    "astro": "astro"
   },
   "dependencies": {
-    "country-flag-icons": "^1.5.13",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.3.0",
-    "react-multi-carousel": "^2.8.5",
-    "react-tooltip": "^5.28.0"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.11.1",
-    "@types/react": "^18.3.10",
-    "@types/react-dom": "^18.3.0",
-    "@typescript-eslint/eslint-plugin": "^8.8.0",
-    "@typescript-eslint/parser": "^8.8.0",
-    "@vitejs/plugin-react": "^4.3.2",
-    "eslint": "^9.12.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.37.1",
-    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
-    "eslint-plugin-react-refresh": "^0.4.12",
-    "globals": "^15.9.0",
-    "prettier": "^3.3.3",
-    "typescript": "^5.5.3",
-    "typescript-eslint": "^8.7.0",
-    "vite": "^5.4.8"
+    "astro": "^4.16.13",
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.6.3"
   }
 }
