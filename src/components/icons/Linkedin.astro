@@ -1,5 +1,5 @@
 ---
-const { size } = Astro.props;
+const { size, color } = Astro.props;
 ---
 
 <svg
@@ -11,6 +11,7 @@ const { size } = Astro.props;
   clip-rule="evenodd"
   viewBox="0 0 30 29.862"
   width={size || 16}
+  fill={color || "#000"}
   ><path
     width="512"
     height="509.64"
