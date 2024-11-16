@@ -21,8 +21,22 @@ const { title } = Astro.props;
   </body>
 </html>
 <style is:global>
+  :root {
+    --main-blue: #0072c6;
+    --main-blue-light: #d3ecfe;
+    --main-blue-dark: #035996;
+    --main-blue-shade2: #0072c626;
+    --main-blue-shade1: #0072c612;
+    --main-blue-shade0: #0072c600;
+  }
+
   html {
-    font-family: system-ui, sans-serif;
-    background: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+    letter-spacing: -0.025rem;
+  }
+  body,
+  figure {
+    margin: 0;
+    padding: 0;
   }
 </style>
