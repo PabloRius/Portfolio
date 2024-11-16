@@ -1,0 +1,157 @@
+---
+import Email from "@/components/icons/Email.astro";
+import Linkedin from "@/components/icons/Linkedin.astro";
+import Github from "@/components/icons/Github.astro";
+---
+
+<section>
+  <div class="Presentation">
+    <p>
+      Hey there! I’m Pablo – a passionate software engineer from Spain, and I’ve
+      had the chance to live in 4 different countries. I recently graduated in
+      Computer Engineering from the Universidad Carlos III de Madrid. I’m always
+      looking for the next challenge, whether it’s building new software
+      solutions or staying active. When I’m not coding, you’ll find me at the
+      gym, exploring the outdoors, or trying out new activities. Want to know
+      more? Scroll down and don’t forget to grab my CV!
+    </p>
+    <div class="Image">
+      <img src="/images/Profile.jpg" alt="Pablo García Rius graduating" />
+    </div>
+  </div>
+  <div class="Links">
+    <div class="SocialIcons">
+      <a
+        href="mailto:pablogrius@gmail.com"
+        target="_blank"
+        rel="noopener noreferrer"><Email size={40} /></a
+      >
+      <a
+        href="https://www.linkedin.com/in/pablo-rius"
+        target="_blank"
+        rel="noopener noreferrer"><Linkedin size={40} /></a
+      >
+      <a
+        href="https://github.com/PabloRius"
+        target="_blank"
+        rel="noopener noreferrer"><Github size={40} /></a
+      >
+    </div>
+
+    <a
+      href="/public/Pablo_Garcia_Rius_resume.pdf"
+      class="CV"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      See my CV
+    </a>
+  </div>
+</section>
+
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+    height: calc(100dvh - 70px);
+    padding: 50px 5% 20px;
+    justify-content: space-evenly;
+    background: linear-gradient(
+      180deg,
+      var(--main-blue-shade2) 0%,
+      var(--main-blue-shade1) 50%,
+      var(--main-blue-shade0) 100%
+    );
+  }
+
+  .Presentation {
+    display: flex;
+    flex-direction: row-reverse;
+    max-height: 60vh;
+    align-items: center;
+    column-gap: 30px;
+    justify-content: space-between;
+  }
+  p {
+    width: 60%;
+    display: flex;
+    margin: 0;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+  }
+  .Image {
+    max-width: 40%;
+    max-height: 100%;
+    border-radius: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .SocialIcons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+  }
+
+  .SocialIcons > a {
+    text-decoration: unset;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Links {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: center;
+  }
+  .CV {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 30px;
+    background-color: var(--main-blue);
+    color: #fff;
+    font-weight: 700;
+    width: max-content;
+    margin: 0 auto 20px;
+    font-size: clamp(1.35rem, 4vw, 1.85rem);
+    border: solid 2px var(--main-blue-dark);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease;
+    text-decoration: none;
+  }
+  @media (max-width: 768px) {
+    section {
+      height: auto;
+      flex-direction: column;
+      padding: 30px 50px 0;
+    }
+    .Presentation {
+      flex-direction: column-reverse;
+      max-height: none;
+      row-gap: 20px;
+    }
+    p {
+      width: 90%;
+    }
+    .Image {
+      max-width: 90%;
+      width: 90%;
+    }
+    .Image > img {
+      height: auto;
+      max-width: 100%;
+    }
+  }
+</style>
