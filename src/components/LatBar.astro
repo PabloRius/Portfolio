@@ -1,0 +1,83 @@
+<aside>
+  <div>
+    <h1>Pablo García Rius</h1>
+    <h2>Software Engineer</h2>
+  </div>
+</aside>
+
+<style>
+  aside {
+    z-index: 300;
+    position: fixed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100px;
+    height: 100%;
+
+    background-color: #f4f4f4;
+
+    border-right: solid 1px rgb(0, 0, 0);
+
+    overflow: auto;
+
+    > div {
+      position: relative;
+
+      width: 100%;
+
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+      > h1,
+      > h2 {
+        position: absolute;
+
+        transform: rotate(-90deg);
+        transform-origin: center;
+        white-space: nowrap;
+      }
+      > h1 {
+        margin: 0;
+        font-size: 24px;
+        left: -60px;
+      }
+      > h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: normal;
+        left: 0;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    aside {
+      position: fixed;
+      padding: 5px 20px;
+      width: calc(100% - 40px);
+      height: 60px;
+      border-bottom: solid 1px rgb(0, 0, 0);
+      border-right: none;
+
+      > div {
+        flex-direction: column;
+        position: unset;
+        > h1,
+        > h2 {
+          width: auto;
+          position: unset;
+
+          transform: none;
+          transform-origin: none;
+          white-space: unset;
+        }
+      }
+    }
+  }
+</style>
