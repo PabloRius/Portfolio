@@ -7,4 +7,18 @@ import Layout from "../layouts/Layout.astro";
   <LatBar /><main></main>
 </Layout>
 
-<style></style>
+<style>
+  main {
+    position: relative;
+    margin-left: 100px;
+
+    flex: 1;
+
+    overflow-y: auto;
+  }
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    margin-top: 70px;
+  }
+</style>
