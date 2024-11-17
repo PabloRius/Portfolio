@@ -1,0 +1,229 @@
+---
+import { getCollection, render } from "astro:content";
+
+const events = await getCollection("events");
+const sortedEvents = events.sort(
+  (a, b) => b.data.startDate.getTime() - a.data.startDate.getTime()
+);
+---
+
+<section>
+  <h2>A walk through Pablo's life</h2>
+  <div class="Timeline">
+    {
+      events.map(async (event, idx) => {
+        const { slug, data, body } = event;
+        const { title, location, startDate, endDate, img } = data;
+        const localeStartDate = startDate.toLocaleString("en-UK", {
+          month: "short",
+          year: "numeric",
+        });
+        const localeEndDate = endDate
+          ? endDate.toLocaleString("en-UK", { month: "short", year: "numeric" })
+          : null;
+        const dateText = endDate
+          ? `${localeStartDate} - ${localeEndDate}`
+          : `${localeStartDate}`;
+        const { Content } = await render(event);
+
+        const side = idx % 2 === 0 ? "Left" : "Right";
+        return (
+          <div class={side}>
+            <span class="Joint" />
+            <div class="Content">
+              <div class="Date">{dateText}</div>
+              <div class="Text">
+                <div class="Title">
+                  <strong>
+                    <p>{data.title}</p>
+                  </strong>
+                </div>
+                {data.location && (
+                  <div class="Location">
+                    {/* <data.flag title={data.location} /> */}
+                    <i>{data.location}</i>
+                  </div>
+                )}
+                <div class="Description">
+                  <Content />
+                </div>
+              </div>
+              {img && (
+                <div class="Image">
+                  <img src={`/images/${img}`} alt={title} />
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      })
+    }
+    <div class="SeparatorBig"></div>
+    <div class="SeparatorSmall"></div>
+  </div>
+</section>
+
+<style>
+  .Timeline {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    padding: 50px 0;
+    .Joint {
+      opacity: inherit;
+      border-radius: 10px;
+      display: flex;
+      position: absolute;
+
+      border-top: solid 4px var(--main-blue);
+      border-bottom: solid 4px var(--main-blue);
+      width: 40px;
+      transition: width 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    }
+    .Content {
+      position: relative;
+      width: calc(80% - 40px);
+      height: calc(50% - 40px);
+      margin: auto;
+      border: solid 1px black;
+      border-radius: 2px;
+      > .Date {
+        width: max-content;
+        position: absolute;
+        transform: translateY(-50%);
+        top: 0;
+        background-color: var(--main-blue-light);
+        border: solid 1px black;
+        border-radius: 2px;
+        padding: 5px 10px;
+      }
+      > .Text {
+        padding: 20px;
+        .Title {
+          font-size: 20px;
+          text-decoration: bold;
+          color: black;
+        }
+        .Location {
+          display: flex;
+          flex-direction: row;
+          max-height: 14px;
+          font-size: 14px;
+          margin-top: 8px;
+          > svg {
+            width: 30px;
+          }
+        }
+        .Description {
+          color: rgb(42, 42, 42);
+        }
+        ul {
+          list-style: circle;
+        }
+      }
+      > .Image {
+        position: relative;
+        /* transform: translateY(95%); */
+        bottom: -10px;
+        right: 15px;
+        background-color: white;
+        border: solid 1px black;
+        border-radius: 2px;
+        padding: 10px;
+        width: 60%;
+        height: auto;
+        > img {
+          max-width: 100%;
+          aspect-ratio: initial;
+        }
+      }
+    }
+
+    > .Left {
+      position: relative;
+      display: flex;
+      height: auto;
+      width: 50%;
+      align-self: flex-start;
+      transition: opacity ease 1.5s;
+      &.fade-in {
+        opacity: 1;
+      }
+      &.fade-out {
+        opacity: 0.1;
+        > .Joint {
+          width: 0;
+        }
+      }
+      > .Joint {
+        top: 50%;
+        left: 100%;
+        transform: translate(-100%, -50%);
+      }
+      > .Content {
+        margin-right: 50px;
+        .Date {
+          right: 15px;
+        }
+        > .Image {
+          right: 10%;
+        }
+      }
+    }
+
+    > .Right {
+      &:first-child {
+        margin-top: 100dvh;
+      }
+      position: relative;
+      display: flex;
+      height: auto;
+      width: 50%;
+      align-self: flex-end;
+      position: relative;
+      transition: opacity ease 1.5s;
+      &.fade-in {
+        opacity: 1;
+      }
+      &.fade-out {
+        opacity: 0.1;
+        > .Joint {
+          width: 0;
+        }
+      }
+      > .Joint {
+        top: 50%;
+        right: 100%;
+        transform: translate(100%, -50%);
+      }
+      > .Content {
+        margin-left: 50px;
+        .Date {
+          left: 15px;
+        }
+        .Image {
+          right: -38%;
+        }
+      }
+    }
+
+    .SeparatorBig {
+      display: flex;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: solid 4px var(--main-blue);
+      border-right: solid 4px var(--main-blue);
+      height: 100%;
+      z-index: 200;
+      border-radius: 10px;
+    }
+    .SeparatorSmall {
+      display: none;
+    }
+  }
+</style>
