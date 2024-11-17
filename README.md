@@ -55,14 +55,14 @@ Contributions are welcome! If you'd like to improve this project:
    ```bash
    git checkout -b feature-name
    ```
-3. Commit your changes:
-  ```bash
-  git commit -m "Add feature-name"
-  ```
+4. Commit your changes:
+   ```bash
+   git commit -m "Add feature-name"
+   ```
 4. Push to your branch:
-  ```bash
-  git push origin feature-name
-  ```
+   ```bash
+   git push origin feature-name
+   ```
 5. Open a pull request.
 
 ---
