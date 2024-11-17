@@ -1,14 +1,27 @@
 ---
 import { getCollection } from "astro:content";
 
+import JSON from "../icons/JSON.astro";
+import Vite from "../icons/Vite.astro";
+import React from "../icons/React.astro";
+import IAstro from "../icons/IAstro.astro";
+
 const projects = await getCollection("projects");
+const projectsSlice = projects.slice(0, 5);
+
+const ICONS: Record<string, any> = {
+  JSON,
+  Vite,
+  React,
+  Astro: IAstro,
+};
 ---
 
 <section>
   <h2>Some of my Projects</h2>
   <ul class="Projects">
     {
-      projects.map(({ data }) => {
+      projectsSlice.map(({ data }) => {
         const { title, shortDescription, stack } = data;
         return (
           <li>
@@ -21,7 +34,16 @@ const projects = await getCollection("projects");
               </header>
               <footer>
                 {stack.map((name) => {
-                  return <span>{name}</span>;
+                  const Icon = ICONS[name];
+
+                  return Icon ? (
+                    <span>
+                      <Icon size={14} />
+                      {name}
+                    </span>
+                  ) : (
+                    <span>{name}</span>
+                  );
                 })}
               </footer>
             </article>
@@ -30,6 +52,7 @@ const projects = await getCollection("projects");
       })
     }
   </ul>
+  <a href="">{"See other projects ->"}</a>
 </section>
 
 <style>
@@ -40,7 +63,8 @@ const projects = await getCollection("projects");
   }
   ul {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    width: 60%;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
     gap: 1rem;
   }
   ul > li {
@@ -68,7 +92,7 @@ const projects = await getCollection("projects");
     text-decoration: underline;
   }
   article p {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     line-height: 1.2rem;
   }
 
@@ -79,11 +103,22 @@ const projects = await getCollection("projects");
     font-size: 0.6rem;
   }
   footer span {
+    display: flex;
+    gap: 0.2rem;
     border-radius: 6px;
     background: #eee;
     color: #444;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: 500;
     padding: 0.2rem 0.6rem;
+    align-items: center;
+    justify-content: center;
+  }
+  section > a {
+    margin: 30px 0 0 0;
+    color: #111;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 </style>
