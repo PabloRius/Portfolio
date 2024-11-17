@@ -56,8 +56,8 @@ Contributions are welcome! If you'd like to improve this project:
    git checkout -b feature-name
    ```
 3. Commit your changes:
-   ```bash
-   git commit -m "Add feature-name"
+  ```bash
+  git commit -m "Add feature-name"
   ```
 4. Push to your branch:
   ```bash
