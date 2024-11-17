@@ -1,54 +1,80 @@
-# Astro Starter Kit: Basics
+# Personal Portfolio 🌐
+This repository contains the code for my personal portfolio, built using [Astro](https://astro.build/). The portfolio serves as a showcase for my projects, skills, and professional profile. It is designed to be fast, responsive, and easy to navigate.
 
-```sh
-npm create astro@latest -- --template basics
-```
+🌟 **Live Demo**: [pablo-garcia-rius.vercel.app](https://pablo-garcia-rius.vercel.app/)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🏗️ Features
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- **Astro Framework**: Utilizes Astro for a modern, performance-optimized build.
+- **Responsive Design**: Fully adaptable for desktop and mobile devices.
+- **Dynamic Components**: Includes reusable and modular components for scalability.
+- **Fast and Lightweight**: Prioritizes speed and minimal resource use.
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Getting Started
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+Follow these steps to run the project locally:
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### Prerequisites
+- Node.js installed
+- A package manager like `npm`
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/PabloRius/Portfolio.git
+   cd Portfolio
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the local development server:
+   ```bash
+   npm run dev
+   ```
+4. Build
+   ```bash
+   npm run build
+   ```
+5. Preview
+   ```bash
+   npm run preview
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
+---
 
-## 🧞 Commands
+## 🌟 Contributing
+Contributions are welcome! If you'd like to improve this project:
 
-All commands are run from the root of the project, from a terminal:
+1. Fork the repository.
+2. Create a new branch for your feature:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add feature-name"
+  ```
+4. Push to your branch:
+  ```bash
+  git push origin feature-name
+  ```
+5. Open a pull request.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+---
 
-## 👀 Want to learn more?
+## 🔑 License
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[MIT](LICENSE.txt) - Created By [**Pablo García Rius**](https://pablo-garcia-rius.vercel.app/).
+
+---
+
+## 💬 Contact
+For any questions or feedback, please reach out to me:
+
+- **Website**: pablo-garcia-rius.vercel.app
+- **GitHub**: PabloRius
