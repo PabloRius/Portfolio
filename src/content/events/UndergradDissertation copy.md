@@ -1,7 +1,7 @@
 ---
 title: Presented my Final Dissertation
 location: Madrid, Spain
-startDate: 01-09-2024
+startDate: 2024-09-01
 ---
 
 Successfully presented my Final Dissertation, achieving a score of 9.1. The thesis focused on creating a dataset of socioeconomic indicators for municipalities in the Community of Madrid, formatted as Linked Open Data.

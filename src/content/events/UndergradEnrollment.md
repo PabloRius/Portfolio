@@ -1,7 +1,7 @@
 ---
 title: Enrolled at Universidad Carlos III
 location: Madrid, Spain
-startDate: 01-09-2019
+startDate: 2019-09-01
 img: UC3MI
 ---
 

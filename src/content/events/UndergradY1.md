@@ -1,8 +1,8 @@
 ---
 title: First Year at UC3M
 location: Madrid, Spain
-startDate: 01-09-2019
-endDate: 01-06-2020
+startDate: 2019-09-02
+endDate: 2020-06-01
 ---
 
 I began my journey as a Computer Science Engineer at Universidad Carlos III de Madrid, diving into foundational courses like:

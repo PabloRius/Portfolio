@@ -1,8 +1,8 @@
 ---
 title: Bussiness Intelligence Analyst Intern at TK Elevators
 location: Madrid, Spain
-startDate: 01-07-2024
-endDate:
+startDate: 2024-07-01
+endDate: 2024-12-20
 img: TKE.jpg
 ---
 

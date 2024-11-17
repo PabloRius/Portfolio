@@ -1,8 +1,8 @@
 ---
 title: Software Engineer Intern at Ntt Data
 location: Madrid, Spain
-startDate: 01-09-2023
-endDate: 01-05-2024
+startDate: 2023-09-01
+endDate: 2024-05-01
 img: NTTData.jpg
 ---
 

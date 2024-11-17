@@ -1,7 +1,7 @@
 ---
 title: Graduated from UC3M
 location: Madrid, Spain
-startDate: 03-06-2024
+startDate: 2024-06-03
 img: UC3MII.jpg
 ---
 
