@@ -1,0 +1,32 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+import LatBar from "@/components/LatBar.astro";
+import Hero from "@/components/sections/Hero.astro";
+import Projects from "@/components/sections/Projects.astro";
+import Timeline from "@/components/sections/Timeline.astro";
+
+import "@fontsource/crimson-text";
+---
+
+<Layout title="Pablo García Rius - Home">
+  <LatBar /><main><Hero /><Projects /><Timeline /></main></Layout
+>
+
+<style>
+  main {
+    position: relative;
+    margin-left: 100px;
+
+    flex: 1;
+
+    overflow-y: auto;
+  }
+
+  @media (max-width: 768px) {
+    main {
+      margin-left: 0;
+      padding-top: 70px;
+    }
+  }
+</style>
