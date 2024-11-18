@@ -1,0 +1,181 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+
+import Web from "@/components/icons/Web.astro";
+import Github from "@/components/icons/Github.astro";
+import { ICONS } from "@/components/icons/Icons.astro";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project) => ({
+    params: { project: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { data, slug } = project;
+const { title, url, repository, stack } = data;
+
+const { Content } = await render(project);
+
+export const prerender = true;
+---
+
+<Layout title={`${title} - Projects`}>
+  <div class="Container">
+    <aside>
+      <span>{"⬅️ "}<a href="/#Projects">{"Go back"}</a></span>
+
+      <div class="Links">
+        <h2>Links</h2>
+        {
+          url && (
+            <a
+              href={url}
+              title={`Visit ${title} on ${url}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Web size={20} />
+            </a>
+          )
+        }{
+          repository && (
+            <a
+              href={repository}
+              title={`Visit ${title}'s Github repository on ${repository}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github size={20} />
+            </a>
+          )
+        }
+      </div>
+      <div class="Stack">
+        <h2>Technologies</h2>
+        {
+          stack.map((name) => {
+            const Icon = ICONS[name];
+
+            return Icon ? (
+              <span>
+                <Icon size={14} />
+                {name}
+              </span>
+            ) : (
+              <span>{name}</span>
+            );
+          })
+        }
+      </div>
+      {
+        url && (
+          <div class="Preview">
+            <iframe
+              src={url}
+              title={`Preview the web from ${title}`}
+              loading="lazy"
+            />
+          </div>
+        )
+      }
+    </aside>
+    <main>
+      <h1>{title}</h1>
+      <Content />
+    </main>
+  </div>
+
+  <style>
+    .Container {
+      display: flex;
+      flex-direction: row;
+      padding: 75px;
+      height: calc(100% - 150px);
+      width: calc(100% - 150px);
+    }
+    aside {
+      position: fixed;
+      flex-direction: column;
+      gap: 2rem;
+      display: flex;
+      border-right: solid 2px #33333380;
+      padding: 20px;
+      width: 350px;
+      height: calc(100vh - 190px);
+      span {
+        font-size: 0.8rem;
+        > a {
+          color: #333;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      .Links,
+      .Stack {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        gap: 1rem;
+        > h2 {
+          margin: 0;
+          width: 100%;
+        }
+        > a {
+          padding: 5px;
+          border: solid 2px rgb(228, 228, 228);
+          background-color: rgb(253, 253, 253);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 6px;
+          transition: all ease 0.2s;
+          &:hover {
+            background-color: rgb(240, 240, 240);
+          }
+        }
+        > span {
+          display: flex;
+          gap: 0.2rem;
+          border-radius: 6px;
+          background: #eee;
+          color: #444;
+          font-size: 0.75rem;
+          font-weight: 500;
+          padding: 0.2rem 0.6rem;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+      .Preview {
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+        position: relative;
+        iframe {
+          width: 120%;
+          height: 120%;
+          transform: scale(0.75);
+          transform-origin: top left;
+          border: none;
+          position:;
+        }
+      }
+    }
+    main {
+      display: flex;
+      width: calc(100% - 390px);
+      margin-left: 390px;
+
+      > h1 {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</Layout>
