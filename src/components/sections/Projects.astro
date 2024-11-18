@@ -1,20 +1,10 @@
 ---
 import { getCollection } from "astro:content";
 
-import JSON from "../icons/JSON.astro";
-import Vite from "../icons/Vite.astro";
-import React from "../icons/React.astro";
-import IAstro from "../icons/IAstro.astro";
+import { ICONS } from "@/components/icons/Icons.astro";
 
 const projects = await getCollection("projects");
 const projectsSlice = projects.slice(0, 5);
-
-const ICONS: Record<string, any> = {
-  JSON,
-  Vite,
-  React,
-  Astro: IAstro,
-};
 ---
 
 <section id="Projects">
@@ -52,7 +42,7 @@ const ICONS: Record<string, any> = {
       })
     }
   </ul>
-  <a href="">{"See other projects ->"}</a>
+  <a href="/projects">{"See other projects ->"}</a>
 </section>
 
 <style>
