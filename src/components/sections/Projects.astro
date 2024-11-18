@@ -17,17 +17,17 @@ const ICONS: Record<string, any> = {
 };
 ---
 
-<section>
+<section id="Projects">
   <h2>Some of my Projects</h2>
   <ul class="Projects">
     {
-      projectsSlice.map(({ data }) => {
+      projectsSlice.map(({ data, slug }) => {
         const { title, shortDescription, stack } = data;
         return (
           <li>
             <article>
               <header>
-                <a href="">
+                <a href={`/project/${slug}`}>
                   <h3>{title}</h3>
                 </a>
                 <p>{shortDescription}</p>
