@@ -1,0 +1,29 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project) => ({
+    params: { project: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+const { data, slug } = project;
+const { title, shortDescription, url, repository, stack } = data;
+
+const { Content } = await render(project);
+
+export const prerender = true;
+---
+
+<Layout title={`${title} - Projects`}>
+  <div>
+    <aside>
+      <a href="/#Projects">{":left: Go back"}</a>
+    </aside>
+  </div></Layout
+>
