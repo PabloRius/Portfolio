@@ -4,4 +4,5 @@ shortDescription: A Bookstore made with Astro with book recomendations for devel
 url: "https://astro-bookstore-beryl.vercel.app/"
 repository: "https://github.com/PabloRius/Astro-bookstore"
 stack: ["Astro"]
+status: Finished
 ---
