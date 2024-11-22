@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { getCollection, render } from "astro:content";
+import { statusColor } from "@/styles/statusColors";
 
 import Web from "@/components/icons/Web.astro";
 import Github from "@/components/icons/Github.astro";
@@ -17,7 +18,7 @@ export async function getStaticPaths() {
 
 const { project } = Astro.props;
 const { data, slug } = project;
-const { title, url, repository, stack } = data;
+const { title, url, repository, stack, status } = data;
 
 const { Content } = await render(project);
 
@@ -71,6 +72,13 @@ export const prerender = true;
             );
           })
         }
+      </div>
+      <div class="Status">
+        <h3>Status</h3>
+        <span
+          style={`background-color: color-mix(in oklab, ${statusColor[status]}, #fff 60%); border: solid 2px color-mix(in oklab, ${statusColor[status]}, #fff 10%)`}
+          >{status}</span
+        >
       </div>
       {
         url && (
@@ -168,6 +176,19 @@ export const prerender = true;
           transform-origin: top left;
           border: none;
           position:;
+        }
+      }
+      .Status {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        span {
+          padding: 5px 12px;
+          width: fit-content;
+          border-radius: 12px;
+          font-weight: 500;
+          font-size: 1rem;
         }
       }
     }

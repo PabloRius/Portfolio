@@ -1,0 +1,92 @@
+---
+import { statusColor } from "@/styles/statusColors";
+import { ICONS } from "./icons/Icons.astro";
+
+const { slug, title, shortDescription, stack, status } = Astro.props;
+---
+
+<li>
+  <article>
+    <header>
+      <a href={`/project/${slug}`}>
+        <h3>{title}</h3>
+        {status && <span style={`color: ${statusColor[status]};`}>&bull;</span>}
+      </a>
+      <p>{shortDescription}</p>
+    </header>
+    <footer>
+      {
+        stack.map((name: string) => {
+          const Icon = ICONS[name];
+
+          return Icon ? (
+            <span>
+              <Icon size={14} />
+              {name}
+            </span>
+          ) : (
+            <span>{name}</span>
+          );
+        })
+      }
+    </footer>
+  </article>
+</li>
+
+<style>
+  li {
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid #e2e2e2;
+    box-shadow: inset 0 0 10px 16px rgba(0, 0, 0, 0.01);
+  }
+
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    height: 100%;
+  }
+
+  article header {
+    flex: 1;
+  }
+
+  article a {
+    color: #111;
+    display: flex;
+    flex-direction: row;
+    gap: 0.2rem;
+    align-items: center;
+  }
+
+  article a span {
+    font-size: 1.5rem;
+  }
+  article a h3:hover {
+    text-decoration: underline;
+  }
+  article p {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 0.6rem;
+  }
+  footer span {
+    display: flex;
+    gap: 0.2rem;
+    border-radius: 6px;
+    background: #eee;
+    color: #444;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 0.2rem 0.6rem;
+    align-items: center;
+    justify-content: center;
+  }
+</style>
