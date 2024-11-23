@@ -17,11 +17,13 @@ The game mimics the well-known game Pokemon Fire-Red (at least it's first steps)
 ## 🎮 State of the Game
 
 - **World Interaction**
-  The user can walk around freely, collisioning with walls, objects and map borders.
-
-  - There's no NPCs to interact with yet.
-
-  - There's no key assigned to interact with the environment yet.
+  <ul style="color:green">
+    <li>The user can walk around freely, collisioning with walls, objects and map borders.</li>
+  </ul>
+  <ul style="color:red">
+  <li>There's no NPCs to interact with. </li>
+  <li>There's no key assigned to interact with the environment yet.</li>
+  </ul>
 
 - **Controls**
   The only keys with a function assigned are the arrow keys, which control the movement of the player around the world.
