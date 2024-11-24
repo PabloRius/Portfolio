@@ -109,7 +109,7 @@ const sortedEvents = events.sort(
       .Text {
         padding: 20px;
         .Title {
-          font-size: 20px;
+          font-size: font-size: clamp(18px, 1.8vw, 20px);
           text-decoration: bold;
           color: black;
         }
@@ -117,7 +117,7 @@ const sortedEvents = events.sort(
           display: flex;
           flex-direction: row;
           max-height: 14px;
-          font-size: 14px;
+          font-size: font-size: clamp(12px, 1.8vw, 16px);
           margin-top: 8px;
           svg {
             width: 30px;
