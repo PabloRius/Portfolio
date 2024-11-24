@@ -1,5 +1,5 @@
 ---
-title: UNSW
+title: University of New South Wales (UNSW)
 location: Sydney, Australia
 startDate: 2023-02-01
 endDate: 2023-07-01
