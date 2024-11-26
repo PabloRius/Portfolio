@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import { formatDate } from "../../utils/Format";
 
 const events = await getCollection("events");
 const sortedEvents = events.sort(
@@ -8,22 +9,15 @@ const sortedEvents = events.sort(
 ---
 
 <section>
-  <h2>A walk through Pablo's life</h2>
+  <h2>Navigating through Pablo's life</h2>
   <div class="Timeline">
     {
       events.map(async (event, idx) => {
         const { data } = event;
         const { title, location, startDate, endDate, img } = data;
-        const localeStartDate = startDate.toLocaleString("en-UK", {
-          month: "short",
-          year: "numeric",
-        });
-        const localeEndDate = endDate
-          ? endDate.toLocaleString("en-UK", { month: "short", year: "numeric" })
-          : null;
-        const dateText = endDate
-          ? `${localeStartDate} - ${localeEndDate}`
-          : `${localeStartDate}`;
+
+        const dateText = formatDate(startDate, endDate);
+
         const { Content } = await render(event);
 
         const side = idx % 2 === 0 ? "Left" : "Right";
