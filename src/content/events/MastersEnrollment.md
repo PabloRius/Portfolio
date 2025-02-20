@@ -5,4 +5,10 @@ startDate: 2025-01-11
 img: Kingston.jpg
 ---
 
-Embarking on a transformative journey, I will begin this master's degree to deepen my expertise and expand my global perspective in the technology industry.
+Pursuing a Master's degree at Kingston University, focusing on the intersection of software engineering and management.
+
+- Studying Agile frameworks like Scrum, AgilePM, and PRINCE2 to enhance project management skills.
+
+- Gaining expertise in software quality engineering, ensuring industry-standard code practices.
+
+- Exploring business management concepts and software architecture principles for building scalable systems.

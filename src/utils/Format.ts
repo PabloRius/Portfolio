@@ -1,5 +1,7 @@
-const formatLocaleDate = (date: Date, formatOptions) =>
-  date.toLocaleString("en-UK", formatOptions);
+const formatLocaleDate = (
+  date: Date,
+  formatOptions?: Intl.DateTimeFormatOptions
+) => date.toLocaleString("en-UK", formatOptions);
 
 export const formatDate = (startDate: Date, endDate?: Date) => {
   let dateText;
