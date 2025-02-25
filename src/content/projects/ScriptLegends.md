@@ -2,8 +2,8 @@
 title: Script Legends
 shortDescription: A web-based version of the videogame Pokemon Fire-red.
 url: "https://script-legends.vercel.app/"
-repository: "https://github.com/PabloRius/script-legends"
-stack: ["React", "Vite", "Pixi"]
+repository: ["https://github.com/PabloRius/script-legends"]
+stack: ["React", "Vite", "TypeScript"]
 status: Early
 ---
 

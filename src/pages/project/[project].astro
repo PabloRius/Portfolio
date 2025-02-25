@@ -1,11 +1,11 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { getCollection, render } from "astro:content";
 import { statusColor } from "@/styles/statusColors";
+import { getCollection, render } from "astro:content";
 
-import Web from "@/components/icons/Web.astro";
 import Github from "@/components/icons/Github.astro";
 import { ICONS } from "@/components/icons/Icons.astro";
+import Web from "@/components/icons/Web.astro";
 
 export async function getStaticPaths() {
   const projects = await getCollection("projects");
@@ -44,16 +44,17 @@ export const prerender = true;
             </a>
           )
         }{
-          repository && (
-            <a
-              href={repository}
-              title={`Visit ${title}'s Github repository on ${repository}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Github size={20} />
-            </a>
-          )
+          repository &&
+            repository.map((repo) => (
+              <a
+                href={repo}
+                title={`Visit ${title}'s Github repository on ${repo}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github size={20} />
+              </a>
+            ))
         }
       </div>
       <div class="Stack">
@@ -80,18 +81,6 @@ export const prerender = true;
           >{status}</span
         >
       </div>
-      {
-        url && (
-          <div class="Preview">
-            <h3>Preview</h3>
-            <iframe
-              src={url}
-              title={`Preview the web from ${title}`}
-              loading="lazy"
-            />
-          </div>
-        )
-      }
     </aside>
     <main>
       <h1>{title}</h1>

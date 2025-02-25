@@ -2,9 +2,8 @@
 import LatBar from "@/components/LatBar.astro";
 import Layout from "@/layouts/Layout.astro";
 
-import { ICONS } from "@/components/icons/Icons.astro";
-import { getCollection } from "astro:content";
 import Project from "@/components/Project.astro";
+import { getCollection } from "astro:content";
 
 const projects = await getCollection("projects");
 ---
