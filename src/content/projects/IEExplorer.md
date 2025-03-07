@@ -1,6 +1,6 @@
 ---
 title: IE Explorer
-shortDescription: A dynamic web application designed to provide detailed information, guides, and interactive features for the Inazuma Eleven video game series. This project focuses on delivering a seamless user experience with features like an interactive map, a comprehensive database, and a team-building tool.
+shortDescription: A dynamic web app offering guides, an interactive map, and team-building tools for Inazuma Eleven.
 url: "https://ie-explorer.vercel.app/"
 repository: ["https://github.com/PabloRius/IE-Explorer"]
 stack: ["TypeScript", "React", "Tailwind", "S3"]
