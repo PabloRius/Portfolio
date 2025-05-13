@@ -1,0 +1,59 @@
+---
+import BackLink from "@/components/links/back-link.astro";
+import ProjectGallery from "@/components/project/gallery.astro";
+import ProjectHeader from "@/components/project/header.astro";
+import HighlightSection from "@/components/project/highlight-section.astro";
+import OtherProjects from "@/components/project/other-projects.astro";
+import Section from "@/components/project/section.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getEntry } from "astro:content";
+
+const project = await getEntry("projects", "json-portfolio");
+const { data, id } = project!;
+const { img } = data;
+
+export const prerender = true;
+---
+
+<Layout>
+  <main class="container px-4 py-12 max-w-7xl mx-auto">
+    <BackLink />
+    <ProjectHeader
+      project={data}
+      category="Web development"
+      year="2024"
+      status="Finished"
+    />
+
+    <ProjectGallery imgs={[{ src: img[0], alt: "JSON Portfolio" }]} />
+
+    <div class="space-y-8 mt-8">
+      <div class="prose prose-slate dark:prose-invert max-w-none">
+        <Section title="Project Overview">
+          <p>
+            A lightweight, standards-compliant portfolio website that follows
+            the JSON-portfolio guidelines for structured data representation,
+            optimized for both web viewing and printing.
+          </p>
+        </Section>
+
+        <Section title="Key features">
+          <ul>
+            <li>Structured data following JSON-portfolio guidelines</li>
+            <li>Print-optimized layout with appropriate styling</li>
+            <li>Responsive web design for all devices</li>
+            <li>Lightweight implementation with minimal dependencies</li>
+          </ul></Section
+        >
+        <HighlightSection title="Highlight">
+          <p class="text-muted-foreground mb-4">
+            This project was my introduction into the Astro framework, that I
+            later used to create the same web you're currently on.
+          </p>
+        </HighlightSection>
+      </div>
+
+      <OtherProjects id={id} />
+    </div>
+  </main></Layout
+>

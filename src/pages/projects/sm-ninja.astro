@@ -1,0 +1,177 @@
+---
+import DatabaseIcon from "@/components/icons/database-icon";
+import ShieldIcon from "@/components/icons/shield-icon";
+import ShovelIcon from "@/components/icons/shovel-icon";
+import BackLink from "@/components/links/back-link.astro";
+import ProjectGallery from "@/components/project/gallery.astro";
+import ProjectHeader from "@/components/project/header.astro";
+import HighlightSection from "@/components/project/highlight-section.astro";
+import OtherProjects from "@/components/project/other-projects.astro";
+import Section from "@/components/project/section.astro";
+import ProjectTechnicalHighlights from "@/components/project/technical-highlights.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getEntry } from "astro:content";
+
+const project = await getEntry("projects", "sm-ninja");
+const { data, id } = project!;
+const { img } = data;
+
+export const prerender = true;
+---
+
+<Layout>
+  <main class="container px-4 py-12 max-w-7xl mx-auto">
+    <BackLink />
+    <ProjectHeader
+      project={data}
+      category="Lifestyle Web"
+      year="2024"
+      status="In Progress (5mo)"
+    />
+
+    <ProjectGallery
+      imgs={[
+        { src: img[0], alt: "SM Ninja - Home page" },
+        // { src: img[1], alt: "SM Ninja - Product information" },
+      ]}
+    />
+
+    <div class="space-y-8 mt-8">
+      <div class="prose prose-slate dark:prose-invert max-w-none">
+        <Section title="Project Overview">
+          <p>
+            SMNinja (Supermarket Ninja) is a comprehensive price comparison
+            platform that helps users find the best deals on grocery products
+            across major UK supermarkets. The application combines a Next.js
+            frontend with a Python web scraping backend to deliver real-time
+            price comparisons and shopping recommendations.
+          </p>
+
+          <p>
+            The project consists of two main components: a web scraping system
+            built with Python that collects product data from various
+            supermarkets, and a user-facing web application built with Next.js,
+            TypeScript, and Prisma that presents this data in an intuitive
+            interface.
+          </p>
+        </Section>
+        <ProjectTechnicalHighlights
+          list={[
+            {
+              icon: ShovelIcon,
+              title: "Scraping",
+              content:
+                "Personalised scraping programs (ninjas) retreive updated information from the supermarkets' webs.",
+            },
+            {
+              icon: ShieldIcon,
+              title: "Secure Authentication",
+              content:
+                "OAuth integration with secure credentials and secure session management using Prisma adapter.",
+            },
+            {
+              icon: DatabaseIcon,
+              title: "Prisma ORM",
+              content:
+                "Type-safe database operations with Prisma for efficient data management.",
+            },
+          ]}
+        />
+
+        <Section title="Technical Implementation">
+          <p>
+            SM Ninja leverages the T3 stack to create a robust and type-safe
+            application. Here's a breakdown of the key technical aspects:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Next.js:</strong> Provides server-side rendering, API routes,
+              and optimized performance for a seamless user experience.
+            </li>
+            <li>
+              <strong>TypeScript:</strong> Ensures type safety throughout the application,
+              reducing runtime errors and improving developer experience.
+            </li>
+            <li>
+              <strong>Prisma:</strong> Offers a type-safe database client for efficient
+              data modeling and querying, simplifying database operations.
+            </li>
+            <li>
+              <strong>OAuth Authentication:</strong> Implements secure user authentication
+              with multiple providers (Google, GitHub) using the Prisma adapter.
+            </li>
+            <li>
+              <strong>Tailwind CSS:</strong> Provides utility-first styling for a
+              responsive and consistent UI across all devices.
+            </li>
+          </ul></Section
+        >
+
+        <HighlightSection title="Web Scraping System">
+          <p>
+            The backbone of SMNinja is its web scraping system, built with
+            Python. This system regularly collects product data from major UK
+            supermarkets:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Data Collection:</strong> Uses BeautifulSoup and requests libraries
+              to extract product information from supermarket websites.
+            </li>
+            <li>
+              <strong>Anti-blocking Measures:</strong> Implements robust headers
+              and user agent rotation to avoid being blocked by target websites.
+            </li>
+            <li>
+              <strong>Scheduled Scraping:</strong> Runs daily to update prices, only
+              updates old data to avoid overloading the database.
+            </li>
+            <li>
+              <strong>Error Handling:</strong> Robust error handling and retry mechanisms
+              to deal with website changes and temporary failures.
+            </li>
+          </ul>
+        </HighlightSection>
+
+        <h2>Lessons Learned</h2>
+        <p>
+          MediConnect was my first project using the T3 stack, and it provided
+          valuable learning experiences:
+        </p>
+
+        <ul>
+          <li>
+            <strong>T3 Stack Benefits:</strong> I gained a deep appreciation for
+            the type safety and developer experience provided by the T3 stack. The
+            combination of Next.js, TypeScript, and Prisma significantly reduced
+            runtime errors and improved code quality.
+          </li>
+          <li>
+            <strong>Database Design Importance:</strong> I learned the importance
+            of careful database schema design, especially for applications with complex
+            relationships like patient-doctor connections and appointment scheduling.
+          </li>
+          <li>
+            <strong>Web Scraping Ethics and Limitations:</strong> I learned to balance
+            the need for data with respecting website terms of service and server
+            load. Implementing proper request throttling, caching, and following
+            robots.txt guidelines was essential.
+          </li>
+          <li>
+            <strong>User-Centered Design:</strong>
+            <strong
+              >The project reinforced the importance of focusing on user needs
+              when designing features. The most valuable aspects of the
+              application were those that directly helped users save money on
+              their regular shopping.
+            </strong>
+          </li>
+        </ul>
+
+        <OtherProjects id={id} />
+      </div>
+    </div>
+  </main>
+</Layout>

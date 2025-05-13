@@ -1,0 +1,14 @@
+---
+import GithubIcon from "../icons/github-icon";
+import { Button } from "../ui/button";
+
+const { repo_link, title } = Astro.props;
+console.log(repo_link, title);
+---
+
+<a href={repo_link} target="_blank" rel="noopener noreferrer">
+  <Button variant="outline" className="gap-2">
+    <GithubIcon className="h-4 w-4" />
+    {title ? title : "GitHub"} Repo
+  </Button>
+</a>

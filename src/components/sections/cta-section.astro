@@ -1,0 +1,35 @@
+---
+import ContactButton from "@/components/links/contact-link.astro";
+import CVButton from "@/components/links/cv-link.astro";
+---
+
+<section class="px-6 py-8 md:py-24">
+  <div
+    class="rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 p-8 md:p-12 dark:from-blue-950/50 dark:to-indigo-950/50 border border-blue-100 dark:border-blue-900"
+  >
+    <div class="grid gap-6 md:grid-cols-2 md:gap-12 items-center">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+          Let's work together
+        </h2>
+        <p class="text-muted-foreground md:text-lg mb-6">
+          I'm currently open to new opportunities and collaborations. Feel free
+          to reach out if you think we'd be a good match.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <ContactButton />
+          <CVButton />
+        </div>
+      </div>
+      <div class="hidden md:block">
+        <img
+          src="/images/Profile_blur.png"
+          width={400}
+          height={300}
+          alt="Collaboration"
+          class="rounded-lg"
+        />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,13 @@
+---
+import { Image } from "astro:assets";
+
+const { img, alt } = Astro.props;
+---
+
+<Image
+  src={img || "/placeholder.svg"}
+  alt={alt}
+  width={962}
+  height={374}
+  class="object-fill"
+/>

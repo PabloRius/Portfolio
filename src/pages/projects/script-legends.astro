@@ -1,0 +1,167 @@
+---
+import CodeIcon from "@/components/icons/code-icon";
+import Gamepad2Icon from "@/components/icons/gamepad-2-icon";
+import LayersIcon from "@/components/icons/layers-icon";
+import MapIcon from "@/components/icons/map-icon";
+
+import BackLink from "@/components/links/back-link.astro";
+import ProjectGallery from "@/components/project/gallery.astro";
+import ProjectHeader from "@/components/project/header.astro";
+import HighlightSection from "@/components/project/highlight-section.astro";
+import OtherProjects from "@/components/project/other-projects.astro";
+import Section from "@/components/project/section.astro";
+import ProjectTechnicalHighlights from "@/components/project/technical-highlights.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getEntry } from "astro:content";
+
+const project = await getEntry("projects", "script-legends");
+const { data, id } = project!;
+const { img } = data;
+
+export const prerender = true;
+---
+
+<Layout>
+  <main class="container px-4 py-12 max-w-7xl mx-auto">
+    <BackLink />
+
+    <div class="space-y-8">
+      <ProjectHeader
+        project={data}
+        category="Game Development"
+        year={2024}
+        status="Unfinished (stopped)"
+      />
+
+      <ProjectGallery
+        imgs={[
+          { src: img[0], alt: "Pokemon Fire Red - Pallet Town" },
+          { src: img[1], alt: "Pokemon Fire Red - Red's house" },
+        ]}
+      />
+
+      <div class="prose prose-slate dark:prose-invert max-w-none">
+        <Section title="Project Overview"
+          ><p>
+            This project is a web-based recreation of the classic Pokémon Fire
+            Red game using modern web technologies. It's built with React, Vite,
+            TypeScript, and the Canvas API to simulate the core gameplay
+            mechanics of the original Game Boy Advance game that was a
+            significant part of my childhood.
+          </p>
+
+          <p>
+            Currently in its early stages, the project focuses on recreating the
+            movement and exploration aspects of the game, including a faithful
+            recreation of Pallet Town (the starting area in the original game).
+          </p></Section
+        >
+        <ProjectTechnicalHighlights
+          list={[
+            {
+              icon: CodeIcon,
+              title: "Custom Game Engine",
+              content:
+                "Built a lightweight game engine using Canvas API and TypeScript to handle rendering, game state, and user input.",
+            },
+            {
+              icon: Gamepad2Icon,
+              title: "Movement System",
+              content:
+                "Implemented grid-based movement with smooth animations and directional character sprites.",
+            },
+            {
+              icon: LayersIcon,
+              title: "Multi-layered Rendering",
+              content:
+                "Created a system for rendering multiple map layers to simulate depth (character can walk behind or in front of objects).",
+            },
+            {
+              icon: MapIcon,
+              title: "Scene Transitions",
+              content:
+                "Implemented location warping system for entering buildings and transitioning between areas.",
+            },
+          ]}
+        />
+
+        <Section title="Technical Challenges"
+          ><p>
+            The most complex aspect of this project was implementing the game's
+            movement and collision systems. Unlike modern game engines that
+            provide these features out of the box, I had to build everything
+            from scratch using the Canvas API:
+          </p>
+
+          <ul>
+            <li>
+              <strong>Collision Detection:</strong> Created a grid-based collision
+              system that checks if the player's next position would intersect with
+              a collidable tile or object.
+            </li>
+            <li>
+              <strong>Camera System:</strong> Implemented a camera that follows the
+              player character while keeping them centered on the screen, with smooth
+              transitions between movements.
+            </li>
+            <li>
+              <strong>Tile Rendering:</strong> Developed an efficient system to render
+              only the tiles visible within the viewport, rather than the entire
+              map, to maintain performance.
+            </li>
+            <li>
+              <strong>Multi-layered Maps:</strong> Created a system that renders
+              map elements in the correct order to simulate depth, allowing the player
+              to walk behind certain objects (like trees) and in front of others.
+            </li>
+          </ul></Section
+        >
+
+        <HighlightSection title="Personal Connection">
+          Pokémon Fire Red was a significant part of my childhood and sparked my
+          interest in game development. I spent countless hours exploring the
+          world of Kanto, collecting Pokémon, and battling trainers. This
+          project is both a technical challenge and a tribute to a game that
+          influenced my path toward becoming a software engineer.
+        </HighlightSection>
+
+        <Section title="Lessons Learnt">
+          <p>This project (in it's short lifespan) has taught me about:</p>
+
+          <ul>
+            <li>
+              <strong>Game Development Fundamentals:</strong> Understanding game
+              loops, state management, and the importance of frame rate consistency.
+            </li>
+            <li>
+              <strong>Canvas API Mastery:</strong> Deepening my knowledge of the
+              Canvas API for efficient rendering and manipulation.
+            </li>
+            <li>
+              <strong>TypeScript for Complex Systems:</strong> Using TypeScript's
+              type system to manage complex game state and prevent bugs.
+            </li>
+            <li>
+              <strong>Performance Optimization:</strong> Techniques for optimizing
+              rendering performance in Canvas-based applications.
+            </li>
+            <li>
+              <strong>Project Architecture:</strong> Designing a flexible architecture
+              that can be expanded with new features without requiring major refactoring.
+            </li>
+          </ul>
+        </Section>
+
+        <Section title="Future Development"
+          ><p>
+            This project continues to be a labor of love and a technical
+            playground where I can experiment with game development concepts
+            while paying homage to a game that inspired me.
+          </p></Section
+        >
+      </div>
+
+      <OtherProjects id={id} />
+    </div>
+  </main>
+</Layout>

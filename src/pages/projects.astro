@@ -1,49 +1,82 @@
 ---
-import LatBar from "@/components/LatBar.astro";
+import BackLink from "@/components/links/back-link.astro";
+import SkillsLink from "@/components/links/skills-link.astro";
+import ProjectCard from "@/components/project-card";
+import { Button } from "@/components/ui/button";
 import Layout from "@/layouts/Layout.astro";
-
-import Project from "@/components/Project.astro";
 import { getCollection } from "astro:content";
 
-const projects = await getCollection("projects");
+const projects = (await getCollection("projects")).sort(
+  (a, b) => a.data.priority - b.data.priority
+);
 ---
 
-<Layout title="Projects">
-  <LatBar />
-  <main>
-    <h1>Projects Database</h1>
-    <ul class="Projects">
-      {
-        projects.map(({ data, slug }) => {
-          const { title, shortDescription, stack, status } = data;
-          return (
-            <Project
-              slug={slug}
-              title={title}
-              shortDescription={shortDescription}
-              stack={stack}
-              status={status}
-            />
-          );
-        })
-      }
-    </ul>
+<Layout title="Pablo García Rius - Projects">
+  <main class="px-4 py-12">
+    <div class="flex flex-col items-start max-w-5xl mx-auto">
+      <BackLink />
+
+      <div class="w-full mb-12">
+        <div
+          class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm text-blue-600 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-400 mb-4"
+        >
+          <span>Portfolio</span>
+        </div>
+        <h1
+          class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4"
+        >
+          All Projects
+        </h1>
+        <p class="text-muted-foreground md:text-lg max-w-3xl">
+          Browse through my complete portfolio of projects. Each project
+          represents unique challenges and solutions across different
+          technologies and domains.
+        </p>
+      </div>
+      <div class="w-full space-y-16">
+        <section class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project) => <ProjectCard project={project.data} />)}
+          </div>
+        </section>
+      </div>
+
+      <div
+        class="w-full mt-16 pt-8 border-t border-slate-200 dark:border-slate-800"
+      >
+        <div
+          class="rounded-2xl bg-gradient-to-r from-blue-50 to-indigo-50 p-8 md:p-12 dark:from-blue-950/50 dark:to-indigo-950/50 border border-blue-100 dark:border-blue-900"
+        >
+          <div class="grid gap-6 md:grid-cols-2 md:gap-12 items-center">
+            <div>
+              <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+                Have a project in mind?
+              </h2>
+              <p class="text-muted-foreground md:text-lg mb-6">
+                I'm always open to discussing new projects and opportunities.
+                Let's create something amazing together.
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <Button
+                  className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800"
+                >
+                  Contact Me
+                </Button>
+                <SkillsLink />
+              </div>
+            </div>
+            <div class="hidden md:block">
+              <img
+                src="/images/Profile_blur.png"
+                width={400}
+                height={300}
+                alt="Collaboration"
+                class="rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </Layout>
-
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    gap: 3rem;
-    padding: 4rem;
-  }
-  ul {
-    display: grid;
-    width: 60%;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 2fr));
-    gap: 2rem;
-  }
-</style>

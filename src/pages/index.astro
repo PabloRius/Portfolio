@@ -1,15 +1,19 @@
 ---
+import CTASection from "@/components/sections/cta-section.astro";
+import HeroSection from "@/components/sections/hero-section.astro";
+import ProjectsSection from "@/components/sections/projects-section.astro";
+import SkillsSection from "@/components/sections/skills-section.astro";
+import TechStackSection from "@/components/sections/tech-stack-section.astro";
+
 import Layout from "@/layouts/Layout.astro";
-
-import SpeedInsights from "@vercel/speed-insights/astro";
-
-import LatBar from "@/components/LatBar.astro";
-import Hero from "@/components/sections/Hero.astro";
-import Projects from "@/components/sections/Projects.astro";
-import Timeline from "@/components/sections/Timeline.astro";
 ---
 
 <Layout title="Pablo García Rius - Home">
-  <LatBar /><main><Hero /><Projects /><Timeline /></main></Layout
+  <main class="flex min-h-screen flex-col">
+    <HeroSection />
+    <TechStackSection />
+    <ProjectsSection />
+    <SkillsSection />
+    <CTASection />
+  </main></Layout
 >
-<SpeedInsights />

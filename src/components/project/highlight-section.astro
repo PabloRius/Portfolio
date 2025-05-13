@@ -1,0 +1,14 @@
+---
+const { title } = Astro.props;
+---
+
+<div
+  class="my-8 p-6 bg-blue-50 dark:bg-blue-950/30 rounded-xl border border-blue-100 dark:border-blue-900"
+>
+  <h3 class="text-xl font-bold mb-2 text-blue-700 dark:text-blue-400">
+    {title}
+  </h3>
+  <p class="text-muted-foreground">
+    <slot />
+  </p>
+</div>

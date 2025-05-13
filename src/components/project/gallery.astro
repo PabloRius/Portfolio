@@ -1,0 +1,20 @@
+---
+import ProjectBanner from "../project-banner.astro";
+
+const { imgs } = Astro.props;
+---
+
+<div class=`grid grid-cols-1 ${imgs[1] && "md:grid-cols-2"} gap-6`>
+  <div
+    class="relative aspect-video flex items-center justify-center rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800"
+  >
+    <ProjectBanner img={imgs[0].src} alt={imgs[0].alt} />
+  </div>
+  {
+    imgs[1] && (
+      <div class="relative flex items-center aspect-video rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+        <ProjectBanner img={imgs[1].src} alt={imgs[1].alt} />
+      </div>
+    )
+  }
+</div>

@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import ProjectsLink from "../links/projects-link.astro";
+import ProjectCard from "../project-card";
+
+const projects = await getCollection("projects");
+const projectsSlice = projects
+  .sort((a, b) => a.data.priority - b.data.priority)
+  .slice(0, 6);
+---
+
+<section id="projects" class="px-6 py-16 md:py-24">
+  <div
+    class="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+  >
+    <div
+      class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm text-blue-600 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-400"
+    >
+      <span>Portfolio</span>
+    </div>
+    <div class="space-y-2">
+      <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+        Featured Projects
+      </h2>
+      <p class="max-w-[700px] text-muted-foreground md:text-lg">
+        Check out some of my recent work. Each project represents unique
+        challenges and solutions.
+      </p>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {projectsSlice.map((project) => <ProjectCard project={project.data} />)}
+  </div>
+  <div class="flex justify-center mt-12">
+    <ProjectsLink />
+  </div>
+</section>

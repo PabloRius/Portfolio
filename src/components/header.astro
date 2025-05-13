@@ -1,0 +1,16 @@
+---
+import ContactButton from "./links/contact-link.astro";
+import ModeToggle from "./mode-toggle";
+---
+
+<header
+  class="sticky flex flex-row items-center gap-4 justify-evenly top-0 p-4 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+>
+  <a href="/" class="font-bold text-xl text-blue-600 dark:text-blue-500">
+    Pablo García Rius
+  </a>
+  <div class="ml-auto flex items-center space-x-4">
+    <ContactButton />
+    <ModeToggle client:load />
+  </div>
+</header>

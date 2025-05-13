@@ -1,0 +1,72 @@
+---
+import CVButton from "@/components/links/cv-link.astro";
+import GithubLink from "@/components/links/github-link.astro";
+import InstagramLink from "@/components/links/instagram-link.astro";
+import LinkedinLink from "@/components/links/linkedin-link.astro";
+---
+
+<section
+  class="relative overflow-hidden py-10 md:py-22 bg-slate-50 dark:bg-slate-900"
+>
+  <div class="absolute inset-0 bg-grid-small-slate/[0.05] bg-[size:20px_20px]">
+  </div>
+  <div
+    class="absolute top-0 right-0 -z-10 h-full w-full bg-gradient-to-b from-blue-50/20 via-transparent to-transparent dark:from-blue-950/20"
+  >
+  </div>
+
+  <div class="relative px-6">
+    <div class="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+      <div class="flex flex-col justify-center space-y-6">
+        <div
+          class="inline-flex w-fit items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm text-blue-600 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-400"
+        >
+          <span>Software Engineer</span>
+        </div>
+        <div class="space-y-2">
+          <h1
+            class="text-4xl font-bold tracking-tight sm:text-5xl xl:text-6xl/none"
+          >
+            Pablo <span class="text-blue-600 dark:text-blue-500"
+              >{"García Rius"}</span
+            >
+          </h1>
+          <h2 class="text-xl font-medium text-muted-foreground">
+            Building digital experiences
+          </h2>
+          <p class="max-w-[600px] text-muted-foreground md:text-lg mt-4">
+            Hey there! I'm Pablo, a passionate Spanish software engineer who has
+            had the opportunity to live in four different countries. I am
+            currently pursuing a Master's degree in Software Engineering and
+            Management while holding a Bachelor's in Computer Science
+            Engineering. I'm always looking for the next challenge, whether it's
+            building new software solutions or staying active. When I'm not
+            coding, you'll find me at the gym, sightseeing or developing another
+            of my passions, cooking. Want to know more?
+          </p>
+        </div>
+        <div class="flex flex-wrap gap-4">
+          <GithubLink />
+          <LinkedinLink />
+          <InstagramLink />
+          <CVButton />
+        </div>
+      </div>
+      <div class="flex justify-center lg:justify-end">
+        <div
+          class="relative h-[300px] w-[300px] sm:h-[400px] sm:w-[400px] rounded-2xl overflow-hidden border-4 border-white shadow-xl dark:border-slate-800"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 z-10"
+          >
+          </div>
+          <img
+            src="/images/Profile_blur.png"
+            alt="Pablo"
+            class="object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

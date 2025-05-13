@@ -1,0 +1,59 @@
+---
+import CalendarIcon from "../icons/calendar-icon";
+import ClockIcon from "../icons/clock-icon";
+import DemoLink from "../links/demo-link.astro";
+import GithubRepoLink from "../links/github-repo-link.astro";
+import { Badge } from "../ui/badge";
+
+const { project, category, year, status } = Astro.props;
+const { title, stack, repository, url } = project;
+---
+
+<div>
+  <div
+    class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm text-blue-600 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-400 mb-4"
+  >
+    <span>{category}</span>
+  </div>
+  <h1 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl mb-4">
+    {title}
+  </h1>
+
+  <div class="flex flex-wrap gap-4 mb-6 text-sm text-muted-foreground">
+    <div class="flex items-center gap-1">
+      <CalendarIcon className="h-4 w-4" />
+      <span>{year}</span>
+    </div>
+    <div class="flex items-center gap-1">
+      <ClockIcon className="h-4 w-4" />
+      <span>{status}</span>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap gap-2 mb-6">
+    {
+      stack.map((tech: string) => (
+        <Badge
+          key={tech}
+          variant="secondary"
+          className="bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700"
+        >
+          {tech}
+        </Badge>
+      ))
+    }
+  </div>
+
+  <div class="flex gap-4 mb-8">
+    {
+      repository && Array.isArray(repository) ? (
+        repository.map((repo) => (
+          <GithubRepoLink repo_link={repo.url} title={repo.title} />
+        ))
+      ) : (
+        <GithubRepoLink repo_link={repository} />
+      )
+    }
+    {url && <DemoLink demo_link={url} />}
+  </div>
+</div>

@@ -1,0 +1,14 @@
+---
+import ExternalLinkIcon from "../icons/external-link-icon";
+import { Button } from "../ui/button";
+
+const { demo_link } = Astro.props;
+---
+
+<a href={demo_link} target="_blank" rel="noopener noreferrer">
+  <Button
+    className="gap-2 bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800"
+  >
+    <ExternalLinkIcon className="h-4 w-4" /> Live Demo
+  </Button>
+</a>

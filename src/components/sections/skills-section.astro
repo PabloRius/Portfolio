@@ -1,0 +1,98 @@
+---
+import { coreDevSkills, projectKnowledge, toolsDevOps } from "@/lib/data";
+import ClipboardIcon from "../icons/clipboard-icon";
+import CodeIcon from "../icons/code-icon";
+import HammerIcon from "../icons/hammer-icon";
+---
+
+<section
+  id="skills"
+  class="py-16 md:py-24 relative overflow-hidden bg-slate-50 dark:bg-slate-900/50"
+>
+  <div class="absolute inset-0 bg-grid-small-slate/[0.05] bg-[size:20px_20px]">
+  </div>
+  <div class="px-6 relative">
+    <div
+      class="flex flex-col items-center justify-center space-y-4 text-center mb-12"
+    >
+      <div
+        class="inline-flex items-center rounded-full border border-blue-200 bg-blue-50 px-3 py-1 text-sm text-blue-600 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-400"
+      >
+        <span>Expertise</span>
+      </div>
+      <div class="space-y-2">
+        <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+          Skills & Experience
+        </h2>
+        <p class="max-w-[700px] text-muted-foreground md:text-lg">
+          Technologies and tools I've mastered throughout my career.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div
+        class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-700"
+      >
+        <div
+          class="h-12 w-12 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center mb-4"
+        >
+          <CodeIcon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+        </div>
+        <h3 class="text-xl font-bold mb-3">Core Development</h3>
+        <div class="grid space-y-2 lg:grid-cols-2">
+          {
+            coreDevSkills.map((skill, index) => (
+              <div class="flex items-center gap-2">
+                <div class="h-2 w-2 rounded-full bg-blue-500" />
+                <span>{skill}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div
+        class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-700"
+      >
+        <div
+          class="h-12 w-12 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center mb-4"
+        >
+          <HammerIcon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+        </div>
+        <h3 class="text-xl font-bold mb-3">Tools</h3>
+        <div class="grid space-y-2 lg:grid-cols-2">
+          {
+            toolsDevOps.map((skill) => (
+              <div class="flex items-center gap-2">
+                <div class="h-2 w-2 rounded-full bg-blue-500" />
+                <span>{skill}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div
+        class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-sm border border-slate-200 dark:border-slate-700"
+      >
+        <div
+          class="h-12 w-12 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center mb-4"
+        >
+          <ClipboardIcon className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+        </div>
+        <h3 class="text-xl font-bold mb-3">Workflow</h3>
+        <div class="grid space-y-2 lg:grid-cols-2">
+          {
+            projectKnowledge.map((skill) => (
+              <div class="flex items-center gap-2">
+                <div class="h-2 w-2 rounded-full bg-blue-500" />
+                <span>{skill}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

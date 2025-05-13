@@ -1,0 +1,28 @@
+---
+import type { JSX } from "astro/jsx-runtime";
+
+const { list } = Astro.props;
+---
+
+<div
+  class="not-prose my-8 p-6 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800"
+>
+  <h3 class="text-xl font-bold mb-4">Technical Highlights</h3>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    {
+      list.map((th: { icon: JSX.Element; title: string; content: string }) => (
+        <div class="flex flex-col gap-2">
+          <div class="flex items-start gap-3">
+            <div class="h-8 w-8 rounded-full bg-blue-100 dark:bg-blue-900/50 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <th.icon className="h-4 w-4 text-blue-600 dark:text-blue-400" />
+            </div>
+            <div>
+              <h4 class="font-medium">{th.title}</h4>
+              <p class="text-sm text-muted-foreground">{th.content}</p>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

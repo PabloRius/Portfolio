@@ -1,91 +1,54 @@
 ---
-import "@fontsource/crimson-text";
-interface Props {
-  title: string;
-}
+import Footer from "@/components/footer.astro";
+import Header from "@/components/header.astro";
 
 const { title } = Astro.props;
+
+import "@/styles/global.css";
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>Pablo García Rius - Software Engineer</title>
+    <meta
+      name="description"
+      content="Pablo García Rius is a software Engineering with master's degree, looking for entry-level experience, eperienced in fulll-stack development with tools such as: React, Astro, NextJs, Node, Express, Spring."
+    />
+
+    <!-- <link rel="manifest" href="/site.webmanifest" /> -->
+
+    <meta property="og:title" content="Pablo García Rius - Software Engineer" />
+    <meta
+      property="og:description"
+      content="Pablo García Rius is a software Engineering with master's degree, looking for entry-level experience, eperienced in fulll-stack development with tools such as: React, Astro, NextJs, Node, Express, Spring."
+    />
+    <meta property="og:image" content="/images/Profile_blur.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pablo-garcia-rius.vercel.app" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Pablo García Rius - Software Engineer"
+    />
+    <meta
+      name="twitter:description"
+      content="Pablo García Rius is a software Engineering with master's degree, looking for entry-level experience, eperienced in fulll-stack development with tools such as: React, Astro, NextJs, Node, Express, Spring."
+    />
+    <meta name="twitter:image" content="/images/Profile_blur.png" />
+
+    <meta name="theme-color" content="#155dfc" />
   </head>
-  <body>
-    <slot />
+  <body title={title}>
+    <div class="flex min-h-screen flex-col">
+      <Header />
+      <div class="flex-1"><slot /></div>
+      <Footer />
+    </div>
   </body>
 </html>
-<style is:global>
-  :root {
-    --main-blue: #0072c6;
-    --main-blue-light: #d3ecfe;
-    --main-blue-dark: #035996;
-    --main-blue-shade2: #0072c626;
-    --main-blue-shade1: #0072c612;
-    --main-blue-shade0: #0072c600;
-  }
-
-  html {
-  }
-  svg {
-    isolation: isolate;
-  }
-  body,
-  figure {
-    margin: 0;
-    padding: 0;
-    font-family:
-      "Crimson Text",
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
-    letter-spacing: -0.025rem;
-  }
-  ul {
-    list-style-type: none;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    padding-inline-start: 0;
-  }
-  a {
-    text-decoration: none;
-  }
-
-  main {
-    position: relative;
-    margin-left: 100px;
-
-    flex: 1;
-
-    overflow-y: auto;
-  }
-
-  @media (max-width: 768px) {
-    main {
-      margin-left: 0;
-      padding-top: 70px;
-    }
-  }
-  h1,
-  h2,
-  h3,
-  h4 {
-    margin: 0;
-  }
-</style>

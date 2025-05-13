@@ -1,80 +1,48 @@
-# Personal Portfolio 🌐
-This repository contains the code for my personal portfolio, built using [Astro](https://astro.build/). The portfolio serves as a showcase for my projects, skills, and professional profile. It is designed to be fast, responsive, and easy to navigate.
+# Astro Starter Kit: Basics
 
-🌟 **Live Demo**: [pablo-garcia-rius.vercel.app](https://pablo-garcia-rius.vercel.app/)
+```sh
+pnpm create astro@latest -- --template basics
+```
 
----
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-## 🏗️ Features
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-- **Astro Framework**: Utilizes Astro for a modern, performance-optimized build.
-- **Responsive Design**: Fully adaptable for desktop and mobile devices.
-- **Dynamic Components**: Includes reusable and modular components for scalability.
-- **Fast and Lightweight**: Prioritizes speed and minimal resource use.
+![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
----
+## 🚀 Project Structure
 
-## 🚀 Getting Started
+Inside of your Astro project, you'll see the following folders and files:
 
-Follow these steps to run the project locally:
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-### Prerequisites
-- Node.js installed
-- A package manager like `npm`
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/PabloRius/Portfolio.git
-   cd Portfolio
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the local development server:
-   ```bash
-   npm run dev
-   ```
-4. Build
-   ```bash
-   npm run build
-   ```
-5. Preview
-   ```bash
-   npm run preview
-   ```
+## 🧞 Commands
 
----
+All commands are run from the root of the project, from a terminal:
 
-## 🌟 Contributing
-Contributions are welcome! If you'd like to improve this project:
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `pnpm install`             | Installs dependencies                            |
+| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
+| `pnpm build`           | Build your production site to `./dist/`          |
+| `pnpm preview`         | Preview your build locally, before deploying     |
+| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
-1. Fork the repository.
-2. Create a new branch for your feature:
-   ```bash
-   git checkout -b feature-name
-   ```
-4. Commit your changes:
-   ```bash
-   git commit -m "Add feature-name"
-   ```
-4. Push to your branch:
-   ```bash
-   git push origin feature-name
-   ```
-5. Open a pull request.
+## 👀 Want to learn more?
 
----
-
-## 🔑 License
-
-[MIT](LICENSE.txt) - Created By [**Pablo García Rius**](https://pablo-garcia-rius.vercel.app/).
-
----
-
-## 💬 Contact
-For any questions or feedback, please reach out to me:
-
-- **Website**: [pablo-garcia-rius.vercel.app](https://pablo-garcia-rius.vercel.app/)
-- **GitHub**: PabloRius
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
