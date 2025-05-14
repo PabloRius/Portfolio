@@ -7,6 +7,21 @@ export default function ModeToggle() {
   const [theme, setTheme] = useState<"light" | "dark">("dark");
 
   useEffect(() => {
+    const storedTheme = localStorage.getItem("theme") as
+      | "light"
+      | "dark"
+      | null;
+    if (storedTheme) {
+      setTheme(storedTheme);
+    } else {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      setTheme(prefersDark ? "dark" : "light");
+    }
+  }, []);
+
+  useEffect(() => {
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else if (theme === "light") {
