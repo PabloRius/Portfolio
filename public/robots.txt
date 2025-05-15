@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pablo-garcia-rius.vercel.app/sitemap.xml
