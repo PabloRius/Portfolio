@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
-
+googleBot: crawl/true
 Sitemap: https://pablo-garcia-rius.vercel.app/sitemap.xml
