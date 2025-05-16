@@ -4,7 +4,7 @@ shortDescription: A web-based version of the videogame Pokemon Fire-red. (Very e
 url: "https://script-legends.vercel.app/"
 repository: [{ url: "https://github.com/PabloRius/script-legends" }]
 stack: ["React", "TypeScript", "Vite"]
-status: Early
+status: Unfinished (stopped)
 priority: 2
 img:
   [

@@ -18,12 +18,7 @@ export const prerender = true;
 <Layout>
   <main class="container px-4 py-12 max-w-7xl mx-auto">
     <BackLink />
-    <ProjectHeader
-      project={data}
-      category="Web development"
-      year="2024"
-      status="Finished"
-    />
+    <ProjectHeader project={data} category="Web development" year="2024" />
 
     <ProjectGallery imgs={[{ src: img[0], alt: "JSON Portfolio" }]} />
 

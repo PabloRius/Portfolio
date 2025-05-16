@@ -19,7 +19,7 @@ stack:
     "React",
     "Node.js",
   ]
-status: Early
+status: In progress
 priority: 1
 img: ["/images/projects/SMNinja.webp"]
 ---
