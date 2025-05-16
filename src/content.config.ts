@@ -36,6 +36,10 @@ const experiences = defineCollection({
   schema: experienceSchema,
 });
 
+const volunteering = defineCollection({
+  schema: experienceSchema,
+});
+
 export type Experience = z.infer<typeof experienceSchema>;
 
-export const collections = { projects, experiences };
+export const collections = { projects, experiences, volunteering };
