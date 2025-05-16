@@ -1,6 +1,8 @@
 ---
 import DownloadIcon from "../icons/download-icon";
 import { Button } from "../ui/button";
+
+const { size } = Astro.props;
 ---
 
 <a
@@ -8,7 +10,7 @@ import { Button } from "../ui/button";
   target="_blank"
   rel="noopener noreferrer"
   ><Button
-    className="gap-2 text-lg bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-800 py-6 px-6"
+    className={`gap-2 ml-auto sm:ml-0 bg-blue-600 hover:bg-blue-700 dark:text-white ${size === "lg" && "p-6"}`}
   >
     Download my CV <DownloadIcon className="size-5" />
   </Button></a
