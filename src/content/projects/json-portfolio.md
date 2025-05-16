@@ -6,5 +6,5 @@ repository: [{ url: "https://github.com/PabloRius/JSON-portfolio" }]
 stack: ["Astro", "JSON"]
 status: Finished
 priority: 5
-img: ["/images/projects/JSONPortfolio.png"]
+img: ["/images/projects/JSONPortfolio.webp"]
 ---

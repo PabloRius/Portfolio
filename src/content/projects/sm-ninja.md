@@ -21,5 +21,5 @@ stack:
   ]
 status: Early
 priority: 1
-img: ["/images/projects/SMNinja.png"]
+img: ["/images/projects/SMNinja.webp"]
 ---

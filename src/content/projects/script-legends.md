@@ -7,5 +7,8 @@ stack: ["React", "TypeScript", "Vite"]
 status: Early
 priority: 2
 img:
-  ["/images/projects/ScriptLegends.png", "/images/projects/ScriptLegends2.png"]
+  [
+    "/images/projects/ScriptLegends.webp",
+    "/images/projects/ScriptLegends2.webp",
+  ]
 ---
