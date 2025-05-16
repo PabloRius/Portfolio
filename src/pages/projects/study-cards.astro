@@ -1,0 +1,70 @@
+---
+import BackLink from "@/components/links/back-link.astro";
+import ProjectGallery from "@/components/project/gallery.astro";
+import ProjectHeader from "@/components/project/header.astro";
+import HighlightSection from "@/components/project/highlight-section.astro";
+import OtherProjects from "@/components/project/other-projects.astro";
+import Section from "@/components/project/section.astro";
+import Layout from "@/layouts/Layout.astro";
+import { getEntry } from "astro:content";
+
+const project = await getEntry("projects", "study-cards");
+const { data, id } = project!;
+const { img } = data;
+
+export const prerender = true;
+---
+
+<Layout>
+  <main class="container px-4 py-12 max-w-7xl mx-auto">
+    <BackLink />
+    <ProjectHeader project={data} category="Web development" year="2024" />
+
+    <ProjectGallery
+      imgs={[
+        { src: img[0], alt: "Flip Cards front face" },
+        { src: img[1], alt: "Flip Cards back face" },
+      ]}
+    />
+
+    <div class="space-y-8 mt-8">
+      <div class="prose prose-slate dark:prose-invert max-w-none">
+        <Section title="Project Overview">
+          <p>
+            An interactive flashcard application developed in less than one
+            afternoon to help my girlfriend and her study group prepare for a
+            challenging exam by memorizing key terms and concepts.
+          </p>
+        </Section>
+
+        <HighlightSection title="Key achievements">
+          <ul>
+            <li>
+              Developed and deployed the entire application in under 4 hours
+            </li>
+            <li>
+              Helped the study group improve exam scores by an average of 15%
+            </li>
+            <li>Received enthusiastic feedback from all users</li>
+          </ul></HighlightSection
+        >
+        <Section title="Features">
+          <ul>
+            <li>Interactive flip card animations with smooth transitions</li>
+            <li>JSON-based data structure for easy content updates</li>
+            <li>AI-assisted content generation from study notes</li>
+            <li>Mobile-responsive design for studying on any device</li>
+          </ul>
+        </Section>
+        <Section title="Technologies used"
+          ><p>
+            This project was built using Next.js, TypeScript, JSON and AI
+            assistive technologies for content formatting.
+          </p></Section
+        >
+      </div>
+
+      <OtherProjects id={id} />
+    </div>
+  </main></Layout
+>
