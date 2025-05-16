@@ -19,4 +19,23 @@ const projects = defineCollection({
 
 export type Project = z.infer<typeof projectSchema>;
 
-export const collections = { projects };
+const experienceSchema = z.object({
+  id: z.number(),
+  title: z.string(),
+  company: z.string(),
+  location: z.string(),
+  startDate: z.string(),
+  endDate: z.string(),
+  description: z.string(),
+  achievements: z.array(z.string()),
+  skills: z.array(z.string()),
+  logo: z.string().optional(),
+});
+
+const experiences = defineCollection({
+  schema: experienceSchema,
+});
+
+export type Experience = z.infer<typeof experienceSchema>;
+
+export const collections = { projects, experiences };

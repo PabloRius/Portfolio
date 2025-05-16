@@ -1,0 +1,12 @@
+---
+import WorkExperience from "@/components/experience/timeline";
+import { getCollection } from "astro:content";
+
+const experiences = (await getCollection("experiences"))
+  .sort((a, b) => a.data.id - b.data.id)
+  .map((xp) => xp.data);
+---
+
+<section id="experience" class="px-6 py-8 md:py-12">
+  <WorkExperience client:load experiences={experiences} />
+</section>
