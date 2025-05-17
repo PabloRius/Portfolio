@@ -19,7 +19,7 @@ export default function EducationCard({ education }: { education: Education }) {
     }
   }, [expanded]);
 
-  const toggleExpand = (id: number) => {
+  const toggleExpand = () => {
     setExpanded((prev) => !prev);
   };
 
@@ -49,10 +49,7 @@ export default function EducationCard({ education }: { education: Education }) {
         </div>
 
         <div className="flex-grow">
-          <div
-            className="cursor-pointer"
-            onClick={() => toggleExpand(education.id)}
-          >
+          <div className="cursor-pointer" onClick={() => toggleExpand()}>
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
               <h4 className="text-xl font-bold">{education.degree}</h4>
               <div className="flex items-center text-sm text-muted-foreground">
