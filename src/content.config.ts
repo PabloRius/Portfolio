@@ -42,4 +42,23 @@ const volunteering = defineCollection({
 
 export type Experience = z.infer<typeof experienceSchema>;
 
-export const collections = { projects, experiences, volunteering };
+const educationSchema = z.object({
+  id: z.number(),
+  degree: z.string(),
+  institution: z.string(),
+  location: z.string(),
+  startDate: z.string(),
+  endDate: z.string(),
+  description: z.string(),
+  achievements: z.array(z.string()),
+  courses: z.array(z.string()),
+  logo: z.string().optional(),
+});
+
+const education = defineCollection({
+  schema: educationSchema,
+});
+
+export type Education = z.infer<typeof educationSchema>;
+
+export const collections = { projects, experiences, volunteering, education };
