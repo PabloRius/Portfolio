@@ -1,7 +1,7 @@
 ---
 title: SM Ninja
 shortDescription: A supermarket product scraper. Based in the UK
-url: "https://ninja-sm.vercel.app/products"
+url: "https://ninja-sm.vercel.app"
 repository:
   [
     { url: "https://github.com/PabloRius/Ninja-SM-Frontend", title: Interface },
